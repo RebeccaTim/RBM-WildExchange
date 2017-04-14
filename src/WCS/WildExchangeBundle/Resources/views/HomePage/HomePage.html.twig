@@ -1,0 +1,133 @@
+{% extends 'WCSWildExchangeBundle::homeBase.html.twig' %}
+
+{% block body %}
+
+<nav id = "nav1">
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">
+            <img id="logo" src="img/logo_orange_pastille.png" alt="">
+        </a>
+        <p id='title'>Wild Exchange</p>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li id="co">
+                <a class="waves-effect waves-light btn" href="#modal1" href="badges.html">Se connecter</a>
+            </li>
+            <li id="id">
+                <a class="waves-effect waves-light btn" href="#modal2" href="badges.html">S'inscrire</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<img id ="banniere" src="img/infographie_big.jpg" alt="">
+
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!">Popularité</a></li>
+  <li><a href="#!">Recent</a></li>
+  <li class="divider"></li>
+</ul>
+
+<nav id = "nav2">
+    <div class="nav-wrapper">
+        <ul class="right hide-on-med-and-down">
+            <li id="searchbar">
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" required >
+                        <label class="label-icon" for="search">
+                            <img class="iconsearch" src="img/icon_6.svg" alt="">
+                            <i class="material-icons">Rechercher</i>
+                        </label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+           </li>
+           <li id="questionbar">
+                <form>
+                    <div class="input-field">
+                        <input id="quest" type="search" required>
+                        <label class="label-icon" for="search">
+                            <img class="iconsearch" src="img/icon_6copy.svg" alt="">
+                            <i class="material-icons">Pose ta question</i>
+                        </label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+            </li>
+
+            <!-- Dropdown Trigger -->
+            <li id="drop">
+                <a class="dropdown-button" href="#!" data-activates="dropdown1">
+                    Trier par
+                    <i class="material-icons right">arrow_drop_down</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Modal Structure --> 
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h5>CONNECTION</h5>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Mot de passe</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="m1footer" class="modal-footer">
+        <a id="cobtn" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Me connecter</a>
+    </div>
+</div>
+
+<!-- Modal Structure --> 
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <h5>INSCRIPTION</h5>
+        <div class="row">
+            <form class="col s12">
+                <div id="firstrow"class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">Prenom</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Nom</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Mot de passe</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                         <label for="email">Email</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="m2footer" class="modal-footer">
+        <a id="inscbtn" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">M'inscrire</a>
+    </div>
+</div>
+
+
+{# <div id="test">Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise situation. Moi, si je devais résumer ma vie aujourd’hui avec vous, je dirais que c’est d’abord des rencontres. Des gens qui m’ont tendu la main, peut-être à un moment où je ne pouvais pas, où j’étais seul chez moi. Et c’est assez curieux de se dire que les hasards, les rencontres forgent une destinée... Parce que quand on a le goût de la chose, quand on a le goût de la chose bien faite, le beau geste, parfois on ne trouve pas l’interlocuteur en face je dirais, le miroir qui vous aide à avancer. Alors ça n’est pas mon cas, comme je disais là, puisque moi au contraire, j’ai pu : et je dis merci à la vie, je lui dis merci, je chante la vie, je danse la vie... je ne suis qu’amour ! Et finalement, quand beaucoup de gens aujourd’hui me disent « Mais comment fais-tu pour avoir cette humanité ? », et bien je leur réponds très simplement, je leur dis que c’est ce goût de l’amour ce goût donc qui m’a poussé aujourd’hui à entreprendre une construction mécanique, mais demain qui sait ? Peut-être simplement à me mettre au service de la communauté, à faire le don, le don de soi...</div> #}
+{% endblock %}

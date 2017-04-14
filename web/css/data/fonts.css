@@ -1,0 +1,8 @@
+@font-face {
+  font-family: C-Wild-10;
+  src: url('../data/uxpin-user-fonts-us-west-1.s3.amazonaws.com_705594_deca9f2_ufonts.com_alwyn-webfont.woff');
+}
+@font-face {
+  font-family: C-Wild-18;
+  src: url('../data/uxpin-user-fonts-us-west-1.s3.amazonaws.com_705594_121c927_ufonts.com_alwyn-bold-webfont.woff');
+}

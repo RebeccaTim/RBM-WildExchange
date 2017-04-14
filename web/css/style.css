@@ -1,0 +1,249 @@
+@font-face
+{
+    font-family: C-Wild-10;
+
+    src: url('data/uxpin-user-fonts-us-west-1.s3.amazonaws.com_705594_deca9f2_ufonts.com_alwyn-webfont.woff');
+}
+@font-face
+{
+    font-family: C-Wild-18;
+
+    src: url('data/uxpin-user-fonts-us-west-1.s3.amazonaws.com_705594_121c927_ufonts.com_alwyn-bold-webfont.woff');
+}
+
+body
+{
+    font-family: C-Wild-10;
+
+    background-color: #f1f1f1;
+}
+#nav1
+{
+    width: 100%;
+    height: 124px;
+
+    opacity: .5;
+    background-color: #000 ;
+}
+#nav2
+{
+    width: 100%;
+    height: 107px;
+
+    background-color: #1fa597;
+}
+#nav-mobile
+{
+    /*  margin-top: -50px;*/
+}
+#co
+{
+    width: 196px;
+    height: 38px;
+    margin-top: -86px;
+    margin-right: -160px;
+
+    text-align: center;
+
+    border-radius: 20px;
+    background-color: #f9a02e;
+}
+#id
+{
+    width: 196px;
+    height: 38px;
+    margin-top: -30px;
+
+    text-align: center;
+
+    border-radius: 20px;
+    background-color: #f9a02e;
+}
+
+nav li a
+{
+    font-family: C-Wild-10;
+    font-size: 18px;
+
+    width: 198px;
+    height: 77px;
+    margin-top: -14px;
+
+    color: #fff;
+}
+nav ul a.btn
+{
+    width: 196px;
+    height: 38px;
+    margin-top: -29px;
+    margin-left: 0;
+
+    border-radius: 20px;
+    background-color: transparent;
+}
+h5
+{
+    text-align: center;
+}
+#modal1,
+#modal2
+{
+    color: #f9a02e;
+    border-radius: 50px;
+    border-top-right-radius: 0;
+    background-color: #f1f1f1;
+}
+#m2footer,
+#m1footer
+{
+    margin-top: -30px;
+
+    color: #f9a02e;
+    background-color: transparent;
+}
+input:not([type]),
+input[type=text],
+input[type=password],
+input[type=email]
+{
+    border-bottom: 1px solid #f9a02e;
+}
+.input-field label
+{
+    color: #f9a02e;
+}
+#firstrow
+{
+    margin-bottom: 10px;
+}
+#inscbtn
+{
+    margin: -25px 50px 0 0;
+
+    color: #f9a02e;
+}
+#cobtn
+{
+    margin: -25px 50px 0 0;
+
+    color: #f9a02e;
+}
+#title
+{
+    font-family: C-Wild-10;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 40px;
+
+    width: 300px;
+    height: 96px;
+    margin: 0 0 0 110px;
+    padding-top: 20px;
+
+    letter-spacing: 1px;
+
+    color: #f9a02e;
+}
+#logo
+{
+    width: 100px;
+    height: 99px;
+    margin-top: 10px;
+}
+#banniere
+{
+    width: 100%;
+    height: 551px;
+}
+.iconsearch
+{
+    float: left;
+
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+li form
+{
+    width: 400px;
+    height: 60px;
+
+    border-radius: 10px;
+    background-color: #fff;
+}
+nav .input-field label i
+{
+    font-family: C-Wild-18;
+    font-size: 36px;
+    font-style: italic;
+
+    width: 400px;
+    height: 43px;
+
+    letter-spacing: 1px;
+
+    color: #80cbc4;
+}
+
+#searchbar
+{
+    margin-top: 27px;
+    margin-left: -500px;
+}
+#questionbar
+{
+    margin-top: 27px;
+    margin-right: 100px;
+}
+#prev
+{
+    float: right;
+
+    width: 60px;
+    margin-top: 60px;
+    margin-right: 10px;
+}
+#next
+{
+    float: left;
+
+    width: 60px;
+    margin-top: 60px;
+    margin-left: 10px;
+}
+#drop
+{
+    width: 198px;
+    height: 34px;
+    margin-top: 50px;
+    margin-left: 0;
+
+    border-radius: 10px;
+    background-color: #fff;
+}
+.dropdown-button
+{
+    font-family: C-Wild-10;
+    font-size: 22px;
+
+    width: 198px;
+    height: 50px;
+
+    color: #f9a02e;
+}
+.dropdown-button:hover
+{
+    background-color: transparent;
+}
+
+.dropdown-content li > a
+{
+    font-size: 20px;
+
+    width: 198px;
+    margin-top: 0;
+    padding-top: 30px;
+
+    text-align: center;
+}
