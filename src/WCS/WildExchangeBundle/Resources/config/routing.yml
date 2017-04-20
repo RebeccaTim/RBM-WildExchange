@@ -1,3 +1,7 @@
+wcs_wild_exchange_question:
+    resource: "@WCSWildExchangeBundle/Resources/config/routing/question.yml"
+    prefix:   /question
+
 wcs_wild_exchange_homepage:
     path:     /
     defaults: { _controller: WCSWildExchangeBundle:Homepage:index }
