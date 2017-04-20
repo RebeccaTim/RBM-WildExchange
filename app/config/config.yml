@@ -6,7 +6,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
 
 framework:
     #esi: ~
@@ -70,11 +70,11 @@ swiftmailer:
     spool: { type: memory }
 
 
-
+# FOSUser Configuration
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
-    user_class: WCSWildExchangeBundle\Entity\User
+    user_class: WCS\WildExchangeBundle\Entity\User
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"

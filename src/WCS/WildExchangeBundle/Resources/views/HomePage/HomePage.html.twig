@@ -1,23 +1,6 @@
-{% extends 'WCSWildExchangeBundle::homeBase.html.twig' %}
+{% extends '::homeBase.html.twig' %}
 
 {% block body %}
-
-<nav id = "nav1">
-    <div class="nav-wrapper">
-        <a href="#" class="brand-logo">
-            <img id="logo" src="img/logo_orange_pastille.png" alt="">
-        </a>
-        <p id='title'>Wild Exchange</p>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li id="co">
-                <a class="waves-effect waves-light btn" href="#modal1" href="badges.html">Se connecter</a>
-            </li>
-            <li id="id">
-                <a class="waves-effect waves-light btn" href="#modal2" href="badges.html">S'inscrire</a>
-            </li>
-        </ul>
-    </div>
-</nav>
 
 <img id ="banniere" src="img/infographie_big.jpg" alt="">
 
@@ -97,28 +80,36 @@
     <div class="modal-content">
         <h5>INSCRIPTION</h5>
         <div class="row">
-            <form class="col s12">
-                <div id="firstrow"class="row">
-                    <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">Prenom</label>
+            <form name="fos_user_registration_form" method="post" action="/register/" class="fos_user_registration_register col s12">
+                <div id="fos_user_registration_form">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="fos_user_registration_form_username" name="fos_user_registration_form[username]" required="required" maxlength="180" pattern=".{2,}" type="text" class="validate">
+                            <label for="fos_user_registration_form_username" class="required">Pseudo</label>
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Nom</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="fos_user_registration_form_email" type="email" name "fos_user_registration_form[email]" required="required" class="validate">
+                             <label for="fos_user_registration_form_email" class="required">Email</label>
+                        </div>
+                    </div>
+                    <div id="firstrow" class="row">
+                        <div class="input-field col s6">
+                            <input id="fos_user_registration_form_plainPassword_first" type="password" name="fos_user_registration_form[plainPassword][first]" required="required" class="validate">
+                            <label for="fos_user_registration_form_plainPassword_first" class="required">Mot de passe</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="fos_user_registration_form_plainPassword_second" type="password" name="fos_user_registration_form[plainPassword][second]" required="required" class="validate">
+                            <label for="fos_user_registration_form_plainPassword_second" class="required">Confirmation Mot de passe</label>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Mot de passe</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                         <label for="email">Email</label>
-                    </div>
+
+                <input type="hidden" id="fos_user_registration_form__token" name="fos_user_registration_form[_token]" value="JDNbWyKIQd_2ohYJ4DhjGvkV1gmEvO5VLpSmpTTfTJ4">
+
+                <div>
+                        <input type="submit" value="Register">
                 </div>
             </form>
         </div>
