@@ -33,12 +33,15 @@ body {
 label {
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: medium;
     margin-left: 20px;
 }
 
 select {
-    color: black;
+    color: white;
     background-color: rgb( 255, 222, 165);
+    font-family: 'Source Sans Pro', sans-serif;
+
 }
 .row {
     margin: auto;
@@ -52,7 +55,11 @@ img {
     height: 100px;
     width: 100px;
     justify-content: left;
+    display: none;
+
 }
+
+
 
 .js .inputfile {
     width: 0.1px;
@@ -79,13 +86,13 @@ img {
 
 .inputfile-1+label {
     color: #f1e5e6;
-    background-color: #d3394c;
+    background-color: #2BBBAD;
 }
 
 .inputfile-1:focus+label,
 .inputfile-1.has-focus+label,
 .inputfile-1+label:hover {
-    background-color: #722040;
+    background-color: rgb(251, 168, 88);
 }
 
 #answer {
