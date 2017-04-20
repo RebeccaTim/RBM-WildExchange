@@ -48,7 +48,7 @@ class QuestionController extends Controller
 
 
 
-            $question->setDateQuestion(time());
+            $question->setDateQuestion(date("Y-m-d H:i:s"));
 
             
 
