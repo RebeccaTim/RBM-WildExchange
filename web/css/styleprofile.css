@@ -1,7 +1,6 @@
 body {
     margin-left: 50px;
     margin-right: 50px;
-    margin-top: 10px;
 }
 
 ::-webkit-input-placeholder {
@@ -26,8 +25,7 @@ body {
 
 #profilebubble {
     color: white;
-    padding-bottom: 5px;
-    padding-top: 5px;
+
     background-color: rgb( 255, 222, 165);
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -94,12 +92,6 @@ img {
     display: none;
 }
 
-
-/* container */
-
-.container {
-    padding: 5% 5%;
-}
 
 
 /* CSS talk bubble */
