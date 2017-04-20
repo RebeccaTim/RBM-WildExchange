@@ -1,3 +1,11 @@
 wcs_wild_exchange_homepage:
-    path:     /
+    path:     /home
     defaults: { _controller: WCSWildExchangeBundle:Homepage:index }
+
+wcs_wild_exchange_editprofile:
+    path:     /editprofile
+    defaults: { _controller: WCSWildExchangeBundle:User:editprofile }
+
+wcs_wild_exchange_viewprofile:
+    path: /viewprofile
+    defaults: { _controller: WCSWildExchangeBundle:User:viewprofile }
