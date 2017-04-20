@@ -11,5 +11,13 @@ class UserController extends Controller
     {
         return $this->render('WCSWildExchangeBundle:User:editprofile.html.twig');
 
+
+    }
+
+    public function viewprofileAction()
+    {
+        return $this->render('WCSWildExchangeBundle:User:viewprofile.html.twig');
+
     }
 }
+

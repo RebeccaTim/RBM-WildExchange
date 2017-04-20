@@ -35,15 +35,20 @@ body {
 label {
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
+    margin-left: 20px;
 }
 
+select {
+    color: black;
+    background-color: rgb( 255, 222, 165);
+}
 .row {
     margin: auto;
 }
 
 .bottom-row {
     min-height: 200px;
-}
+    justify-content:center;}
 
 img {
     height: 100px;
