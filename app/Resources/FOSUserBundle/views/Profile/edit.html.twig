@@ -58,7 +58,18 @@
                         $("#avatar").show("slow");
                     });
 
-                });</script>
+                });
+        </script>
+        <script>
+            $(document).ready(
+                function(){
+                    $("#wilder").click(function () {
+                        $("#situation").hide();
+                    });
+
+                });
+        </script>
+
 
 
 
@@ -142,7 +153,9 @@
 
                     <div class="switch">
                         <label for="wilder">
-      Non
+                            <span id="hide"></span>
+
+                            Non
       <input type="checkbox" id="wilder" name="monotreme" value="wilder" >
       <span class="lever"></span>
       Oui
@@ -155,6 +168,13 @@
     <option value="Orléans">Orléans</option>
   </select>
 
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s9 offset-s1">
+                            <i class="material-icons prefix">star</i>
+                            <input id="situation" class="materialize-textarea" placeholder="Situation"></input>
+                        </div>
                     </div>
 
                     <button class="btn waves-effect waves-light col s6 offset-s3" type="submit" name="action">
