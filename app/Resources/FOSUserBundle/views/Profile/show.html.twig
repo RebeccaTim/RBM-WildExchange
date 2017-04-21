@@ -1,5 +1,117 @@
 {% extends "@FOSUser/layout.html.twig" %}
 
+
 {% block fos_user_content %}
-	{{ include("@FOSUser/Profile/show_content.html.twig") }}
+{% include "@FOSUser/Profile/edit_content.html.twig" %}
 {% endblock fos_user_content %}
+{% block body %}
+
+<html class="no-js">
+
+
+<head>
+
+    {% block stylesheets %}
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="{{ asset('css/styleprofile.css') }}" rel="stylesheet">
+
+
+    {% endblock %}
+
+
+    {% block javascripts %}
+
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+
+    {% endblock %}
+
+
+
+    <title>Mon profil</title>
+
+</head>
+
+
+
+
+
+
+    <div class="container">
+
+        <div class="row">
+            <form  class="col s8 offset-s2 talk-bubble tri-right round btm-left talktext" id='profilebubble'>
+                <div class="row">
+                    <div class="box" align="center">
+                        <img id="avatar" src="{{ asset('img/deer2fw-1.png') }}/" alt="Un petit soucis mais on sait que t'as la Wild Attitude" />
+                       </div>
+
+                </div>
+
+
+
+
+
+                <div class="row">
+                    <div class="input-field col s4 offset-s1">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="lastname" type="text" class="validate" placeholder="Nom">
+                    </div>
+
+                    <div class="input-field col s4 offset-s1">
+                        <input id="firstname" type="text" class="validate" placeholder="Prénom">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s9 offset-s1">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="text" class="validate" placeholder="Email">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s9 offset-s1">
+                        <i class="material-icons prefix">phone</i>
+                        <input id="telephone" type="tel" class="validate" placeholder="Téléphone (optionnel)">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s9 offset-s1">
+                        <i class="material-icons prefix">star</i>
+                        <input id="interests" type="text" class="validate" placeholder="Centres d'intérêt"></input>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s9 offset-s1">
+                        <i class="material-icons prefix">mode_edit</i>
+                        <textarea id="description" class="materialize-textarea" placeholder="Présente toi auprès des Wilders !"></textarea>
+                    </div>
+                </div>
+
+            
+                <div class="row buttonrow">
+                                    <a class="btn waves-effect waves-light col s6 offset-s3" type="submit"  href="{{path('fos_user_profile_edit')}}">
+                                                Modifier
+                                        <i class="material-icons right">input</i>
+                                    </a>
+                                </div> 
+            </form>
+
+
+
+
+            </div>
+
+
+{% endblock %}
