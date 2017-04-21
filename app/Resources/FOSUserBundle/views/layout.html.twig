@@ -12,7 +12,15 @@
             {% endfor %}
         {% endif %}
 
-        <div>
+        <div id="content">
+        <style type="text/css"> 
+            #content {
+                margin-left:100px; 
+                margin-right:100px;
+                height: 500px;
+                padding: 100px;
+            }
+        </style>
             {% block fos_user_content %}
             {% endblock fos_user_content %}
         </div>

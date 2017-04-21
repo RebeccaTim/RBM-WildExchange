@@ -1,0 +1,156 @@
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: white;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: white;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: white;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: white;
+}
+
+#profilebubble {
+    color: white;
+    padding: 10px;
+    background-color: rgb( 255, 222, 165);
+    font-family: 'Source Sans Pro', sans-serif;
+    max-width:80% ;
+    min-width:90%;
+}
+
+label {
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: medium;
+    margin-left: 20px;
+    max-width:200px;
+}
+
+select {
+    color: white;
+    background-color: rgb( 255, 222, 165);
+    font-family: 'Source Sans Pro', sans-serif;
+    display: none;
+
+}
+.row {
+    margin: auto;
+}
+
+.buttonrow {
+    padding:3px;
+}
+
+.bottom-row {
+    justify-content:center;}
+
+
+#avatar {
+    display: inline;
+    height: 100px;
+    width: 100px;
+    justify-content: left;
+    display: none;
+}
+
+
+
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile+label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.inputfile-1+label {
+    color: #f1e5e6;
+    background-color: #2BBBAD;
+}
+
+.inputfile-1:focus+label,
+.inputfile-1.has-focus+label,
+.inputfile-1+label:hover {
+    background-color: rgb(251, 168, 88);
+}
+
+#answer {
+    display: none;
+}
+
+
+
+/* CSS talk bubble */
+
+.talk-bubble {
+    margin: 40px;
+    display: inline-block;
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+.round {
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+}
+
+.tri-right.btm-left:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: auto;
+    right: 0px;
+    top: -20px;
+    bottom: auto;
+    border: 22px solid;
+    transform: rotate(180deg);
+    border-color: transparent transparent transparent rgb( 255, 222, 165);
+}
+
+
+/* talk bubble contents */
+
+.talktext {
+    padding: 1em;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+.talktext p {
+    /* remove webkit p margins */
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+}
+
+#file-1 {
+
+    paddin-top: 10px;
+}
