@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta charset="UTF-8">
+        <title>WildExchange</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    </head>
+    <body>
+        
+        <nav id = "nav1">
+            <div class="nav-wrapper">
+                <a href="{{ path('wcs_wild_exchange_homepage') }}" class="brand-logo">
+                    <img id="logo" src="{{ asset('img/logo_orange_pastille.png') }}" alt="">
+                </a>
+                <p id='title'>Wild Exchange</p>
+
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li id="co">
+                          <a class="waves-effect waves-light btn" href="{{ path('fos_user_profile_show') }}">
+                            {{app.user.username}}
+                          </a>
+                        </li>
+                        <li id="id">
+                          <a class="waves-effect waves-light btn" href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                          </a>    
+                            {#<a href="{{ path('fos_user_security_register') }}">Inscription</a>#}
+                        </li>
+                    </ul>
+
+                {% else %}
+
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li id="co">
+                     {# <a class="waves-effect waves-light btn" href="#modal1">Se connecter</a> #}
+                        <a class="waves-effect waves-light btn" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                    </li>
+                    <li id="id">
+                        <a class="waves-effect waves-light btn" href="{{ path('fos_user_registration_register') }}" {# href="#modal2" #}>Inscription</a>    
+                        {#<a href="{{ path('fos_user_security_register') }}">Inscription</a>#}
+                    </li>
+                </ul>
+
+                {% endif %}
+
+            </div>
+        </nav>
+
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+
+        <footer id="foot" class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col m3 s12">
+                <h5 class="white-text">Rejoins-nous !</h5>
+                <a href="https://wildcodeschool.fr/" class="brand-logo" target="_blank">
+                    <img id="logo2" src="{{ asset('img/logo_orange_pastille.png') }}" alt="">
+                </a>
+              </div>
+              <div class="offset-m2 col m4 s12">
+                <h5 class="white-text">Suis-nous sur tes réseaux préférés !</h5>
+                    <div class="row">
+                        <div class="col s3 rs">
+                            <a href = "https://www.facebook.com/wildcodeschool"class="btn-floating btn-large waves-effect waves-light red" target="_blank">
+                                <i class="fa fa-facebook-square fa-5x" aria-hidden="true"></i>
+                            </a>
+                            <span> Facebook</span>
+                        </div>
+                        <div class="col s3 rs">
+                            <a href="https://twitter.com/wildcodeschool"class="btn-floating btn-large waves-effect waves-light red" target="_blank">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                            <span> Twitter</span>
+                        </div>
+                        <div class="col s3 rs">
+                            <a href="https://www.instagram.com/wildcodeschool/"class="btn-floating btn-large waves-effect waves-light red" target="_blank">
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <span> Instagram</span>
+                        </div>
+                        <div class="col s3 rs">
+                            <a href="https://www.youtube.com/channel/UCi99G_0QPx5sYsK8zdvQzfw"class="btn-floating btn-large waves-effect waves-light red" target="_blank">
+                                <i class="fa fa-youtube" aria-hidden="true"></i>
+                            </a>
+                            <span>  Youtube</span>
+                        </div>
+                    </div>
+                    <div id="row2rs" class="row">
+                        <div class="col s3 offset-s1 rs">
+                            <a href="https://github.com/WildCodeSchool"class="btn-floating btn-large waves-effect waves-light red" target="_blank">
+                                <i class="fa fa-github" aria-hidden="true"></i>
+                            </a>
+                            <span>Github</span>
+                        </div>
+                        <div class="col s3 offset-s1 rs">
+                            <a href ="https://www.linkedin.com/school/10387519?pathWildcard=10387519"class="btn-floating btn-large waves-effect waves-light red" target="_blank">
+                                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                            </a>
+                            <span>Linkedin</span>
+                        </div>
+                        <div class="col s3 offset-s1 rs">
+                            <a href="https://www.meetup.com/fr-FR/WildSchool_Bdx/"class="btn-floating btn-large waves-effect waves-light red" target="_blank">
+                                <i class="fa fa-meetup" aria-hidden="true"></i>
+                            </a>
+                            <span>Meetup</span>
+                        </div>
+                    </div>    
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2017 Copyright RBM
+            </div>
+          </div>
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,23 +1,6 @@
-{% extends 'WCSWildExchangeBundle::homeBase.html.twig' %}
+{% extends '::homeBase.html.twig' %}
 
 {% block body %}
-
-<nav id = "nav1">
-    <div class="nav-wrapper">
-        <a href="#" class="brand-logo">
-            <img id="logo" src="img/logo_orange_pastille.png" alt="">
-        </a>
-        <p id='title'>Wild Exchange</p>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li id="co">
-                <a class="waves-effect waves-light btn" href="#modal1" href="badges.html">Se connecter</a>
-            </li>
-            <li id="id">
-                <a class="waves-effect waves-light btn" href="#modal2" href="badges.html">S'inscrire</a>
-            </li>
-        </ul>
-    </div>
-</nav>
 
 <img id ="banniere" src="img/infographie_big.jpg" alt="">
 
@@ -97,28 +80,36 @@
     <div class="modal-content">
         <h5>INSCRIPTION</h5>
         <div class="row">
-            <form class="col s12">
-                <div id="firstrow"class="row">
-                    <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">Prenom</label>
+            <form name="fos_user_registration_form" method="post" action="/register/" class="fos_user_registration_register col s12">
+                <div id="fos_user_registration_form">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="fos_user_registration_form_username" name="fos_user_registration_form[username]" required="required" maxlength="180" pattern=".{2,}" type="text" class="validate">
+                            <label for="fos_user_registration_form_username" class="required">Pseudo</label>
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Nom</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="fos_user_registration_form_email" type="email" name "fos_user_registration_form[email]" required="required" class="validate">
+                             <label for="fos_user_registration_form_email" class="required">Email</label>
+                        </div>
+                    </div>
+                    <div id="firstrow" class="row">
+                        <div class="input-field col s6">
+                            <input id="fos_user_registration_form_plainPassword_first" type="password" name="fos_user_registration_form[plainPassword][first]" required="required" class="validate">
+                            <label for="fos_user_registration_form_plainPassword_first" class="required">Mot de passe</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="fos_user_registration_form_plainPassword_second" type="password" name="fos_user_registration_form[plainPassword][second]" required="required" class="validate">
+                            <label for="fos_user_registration_form_plainPassword_second" class="required">Confirmation Mot de passe</label>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Mot de passe</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                         <label for="email">Email</label>
-                    </div>
+
+                <input type="hidden" id="fos_user_registration_form__token" name="fos_user_registration_form[_token]" value="JDNbWyKIQd_2ohYJ4DhjGvkV1gmEvO5VLpSmpTTfTJ4">
+
+                <div>
+                        <input type="submit" value="Register">
                 </div>
             </form>
         </div>
@@ -128,6 +119,17 @@
     </div>
 </div>
 
+ <div id="test"></div> 
 
-{# <div id="test">Vous savez, moi je ne crois pas qu’il y ait de bonne ou de mauvaise situation. Moi, si je devais résumer ma vie aujourd’hui avec vous, je dirais que c’est d’abord des rencontres. Des gens qui m’ont tendu la main, peut-être à un moment où je ne pouvais pas, où j’étais seul chez moi. Et c’est assez curieux de se dire que les hasards, les rencontres forgent une destinée... Parce que quand on a le goût de la chose, quand on a le goût de la chose bien faite, le beau geste, parfois on ne trouve pas l’interlocuteur en face je dirais, le miroir qui vous aide à avancer. Alors ça n’est pas mon cas, comme je disais là, puisque moi au contraire, j’ai pu : et je dis merci à la vie, je lui dis merci, je chante la vie, je danse la vie... je ne suis qu’amour ! Et finalement, quand beaucoup de gens aujourd’hui me disent « Mais comment fais-tu pour avoir cette humanité ? », et bien je leur réponds très simplement, je leur dis que c’est ce goût de l’amour ce goût donc qui m’a poussé aujourd’hui à entreprendre une construction mécanique, mais demain qui sait ? Peut-être simplement à me mettre au service de la communauté, à faire le don, le don de soi...</div> #}
+    <div id="pages">
+      <ul class="pagination">
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="active"><a href="#!">1</a></li>
+        <li class="waves-effect"><a href="#!">2</a></li>
+        <li class="waves-effect"><a href="#!">3</a></li>
+        <li class="waves-effect"><a href="#!">4</a></li>
+        <li class="waves-effect"><a href="#!">5</a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+      </ul>
+    </div>
 {% endblock %}

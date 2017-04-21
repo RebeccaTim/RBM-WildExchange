@@ -4,6 +4,7 @@ namespace WCS\WildExchangeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
@@ -13,6 +14,11 @@ use FOS\UserBundle\Model\User as BaseUser;
  */
 class User extends BaseUser
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
     /**
      * @var int
      *
@@ -36,7 +42,6 @@ class User extends BaseUser
      */
     private $prenom;
 
-
     /**
      * @var string
      *
@@ -53,7 +58,7 @@ class User extends BaseUser
 
     /**
      * @var string
-     *
+     * 
      * @ORM\Column(name="occupation", type="string", length=255, nullable=true)
      */
     private $occupation;
@@ -122,30 +127,6 @@ class User extends BaseUser
     public function getPrenom()
     {
         return $this->prenom;
-    }
-
-    /**
-     * Set pseudo
-     *
-     * @param string $pseudo
-     *
-     * @return User
-     */
-    public function setPseudo($pseudo)
-    {
-        $this->pseudo = $pseudo;
-
-        return $this;
-    }
-
-    /**
-     * Get pseudo
-     *
-     * @return string
-     */
-    public function getPseudo()
-    {
-        return $this->pseudo;
     }
 
     /**
@@ -292,28 +273,5 @@ class User extends BaseUser
         return $this->dateCreation;
     }
 
-    /**
-     * Set dateDernierAcces
-     *
-     * @param \DateTime $dateDernierAcces
-     *
-     * @return User
-     */
-    public function setDateDernierAcces($dateDernierAcces)
-    {
-        $this->dateDernierAcces = $dateDernierAcces;
-
-        return $this;
-    }
-
-    /**
-     * Get dateDernierAcces
-     *
-     * @return \DateTime
-     */
-    public function getDateDernierAcces()
-    {
-        return $this->dateDernierAcces;
-    }
 }
 

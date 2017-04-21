@@ -1,0 +1,33 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+
+{# <form action="{{ path("fos_user_registration_register") }}" method="post" class="fos_user_registration_register">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+    <div class="input-field col s6">
+        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+        <label for="username">{{ 'security.login.username'|trans }}</label>
+    </div>
+    <div class="input-field col s6">
+        <input type="password" id="password" name="_password" required="required" />
+        <label for="password">{{ 'security.login.password'|trans }}</label>
+    </div>
+    <div class="input-field col s6">
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+    </div>
+
+    <div id="m2footer">
+        <a id="inscbtn" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">
+            <input type="submit" id="_submit" name="_submit" value="{{ 'registration.submit'|trans }}" /> 
+        </a>
+    </div>
+</form>
+ #}
