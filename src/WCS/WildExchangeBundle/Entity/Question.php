@@ -45,7 +45,7 @@ class Question
     /**
      * @var string
      *
-     * @ORM\Column(name="contenu", type="string", length=255)
+     * @ORM\Column(name="contenu", type="text", length=60000)
      */
     private $contenu;
 
