@@ -75,9 +75,8 @@ select {
 
 .inputfile+label {
     max-width: 80%;
-    font-size: 1.25rem;
-    /* 20px */
-    font-weight: 700;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: medium;
     text-overflow: ellipsis;
     white-space: nowrap;
     cursor: pointer;
