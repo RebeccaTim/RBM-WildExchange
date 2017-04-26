@@ -201,7 +201,9 @@ nav .input-field label i
 
     color: #80cbc4;
 }
-
+#search { 
+    padding-left: 5em; 
+}
 #searchbar
 {
     margin-top: 27px;
@@ -265,7 +267,7 @@ nav .input-field label i
 }
 #foot
 {
-    width: 100%;
+    width: 100% !important;
     opacity: .8;
     background-color: #000;
 }
@@ -297,6 +299,15 @@ text-align: center;
     width: 70px;
     height: 70px;
     padding-top: 5px;
+}
+#btnregister i{
+    background-color: #f9a02e;
+    border-radius: 20px;
+    float: right;
+    margin-top: 20px;
+}
+#btnregister i:hover{
+    background-color: #26a69a;
 }
 
 
