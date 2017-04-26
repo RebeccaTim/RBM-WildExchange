@@ -31,16 +31,16 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255, nullable=true)
+     * @ORM\Column(name="lastname", type="string", length=255, nullable=true)
      */
-    private $nom;
+    private $lastname;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="prenom", type="string", length=255, nullable=true)
+     * @ORM\Column(name="firstname", type="string", length=255, nullable=true)
      */
-    private $prenom;
+    private $firstname;
 
     /**
      * @var string
@@ -48,6 +48,13 @@ class User extends BaseUser
      * @ORM\Column(name="url_avatar", type="string", length=255, nullable=true)
      */
     private $urlAvatar;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="phone", type="integer", nullable=true)
+     */
+    private $phone;
 
     /**
      * @var string
@@ -59,9 +66,9 @@ class User extends BaseUser
     /**
      * @var string
      * 
-     * @ORM\Column(name="occupation", type="string", length=255, nullable=true)
+     * @ORM\Column(name="situation", type="string", length=255, nullable=true)
      */
-    private $occupation;
+    private $situation;
 
     /**
      * @var \DateTime
@@ -83,15 +90,15 @@ class User extends BaseUser
     }
 
     /**
-     * Set nom
+     * Set lastname
      *
-     * @param string $nom
+     * @param string $lastname
      *
      * @return User
      */
-    public function setNom($nom)
+    public function setLastname($lastname)
     {
-        $this->nom = $nom;
+        $this->lastname = $lastname;
 
         return $this;
     }
@@ -101,57 +108,45 @@ class User extends BaseUser
      *
      * @return string
      */
-    public function getNom()
+    public function getLastname()
     {
-        return $this->nom;
+        return $this->lastname;
     }
 
-    /**
-     * Set prenom
-     *
-     * @param string $prenom
-     *
-     * @return User
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
 
-        return $this;
-    }
 
     /**
      * Get prenom
      *
      * @return string
      */
-    public function getPrenom()
+    public function getFirstname()
     {
-        return $this->prenom;
+        return $this->firstname;
     }
 
     /**
-     * Set mail
+     * Set email
      *
-     * @param string $mail
+     * @param string $email
      *
      * @return User
      */
-    public function setMail($mail)
+    public function setEmail($email)
     {
-        $this->mail = $mail;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Get mail
+     * Get email
      *
      * @return string
      */
-    public function getMail()
+    public function getEmail()
     {
-        return $this->mail;
+        return $this->email;
     }
 
     /**
@@ -227,27 +222,27 @@ class User extends BaseUser
     }
 
     /**
-     * Set occupation
+     * Set situation
      *
-     * @param string $occupation
+     * @param string $situation
      *
      * @return User
      */
-    public function setOccupation($occupation)
+    public function setSituation($situation)
     {
-        $this->occupation = $occupation;
+        $this->situation = $situation;
 
         return $this;
     }
 
     /**
-     * Get occupation
+     * Get situation
      *
      * @return string
      */
-    public function getOccupation()
+    public function getSituation()
     {
-        return $this->occupation;
+        return $this->situation;
     }
 
     /**
@@ -274,5 +269,42 @@ class User extends BaseUser
         return $this->dateCreation;
     }
 
-}
 
+    /**
+     * Set firstname
+     *
+     * @param string $firstname
+     *
+     * @return User
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Set phone
+     *
+     * @param integer $phone
+     *
+     * @return User
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Get phone
+     *
+     * @return integer
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+}
