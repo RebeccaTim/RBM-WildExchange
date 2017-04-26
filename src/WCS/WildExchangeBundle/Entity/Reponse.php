@@ -44,6 +44,16 @@ class Reponse
 
 
     /**
+    *@ORM\ManyToOne(targetEntity="User", inversedBy="reponses")
+    */
+    private $user;
+
+     /**
+    *@ORM\ManyToOne(targetEntity="Question", inversedBy="reponses")
+    */
+    private $question;
+
+    /**
      * Get id
      *
      * @return int
