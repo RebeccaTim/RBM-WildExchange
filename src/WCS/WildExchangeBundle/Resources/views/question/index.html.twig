@@ -12,7 +12,6 @@
         border: solid 1px;
         border-radius: 10px;
 
-        width: 80%;
         font-size: 20px;
         font-weight: bold;
         margin-left: auto;
@@ -20,30 +19,18 @@
     }
 
     .textField{
-        height: 100px;
+ 
+        height: 160px;
         border: solid 1px;
         border-radius: 10px;
         word-wrap: break-word;
     }
 
-    .zoneA{
-
-       display:inline;
-       text-align: left;
-    }
-
-    .zoneB{
-       margin-right: 20px;
-       display:inline;
-       text-align: right;
-    }
 
     .zone{
        width: 33%;
        display:inline;
     }
-
-
 
 
     .legende{
@@ -55,7 +42,7 @@
     .BulleQuestion{
         background-color: #80CBC4;
         border-radius: 20px;
-        width: 80%;
+
         margin-left: auto;
         margin-right: auto;
     }
@@ -65,6 +52,7 @@
         margin-left: auto;
         margin-right: auto;    
     }
+
 
 
 </style>
@@ -78,16 +66,23 @@
        <div class="BulleQuestion">
 
 
-            <div class="input-field col s6">
-                <div class="titre">
-                    <span>Question : </span>{{ question.titre }}
+            <div class="input-field">
+                <div class="row">
+                    <div class="titre  col s9 offset-s1">
+                        <span>Question : </span>{{ question.titre }}
+                    </div>
                 </div>
 
-                <br>
+                <div class="row">
+                    <div class="textField col s9 offset-s1">
+                        {{ question.contenu }}
+                    </div>
 
-                <div class="textField">
-                    {{ question.contenu }}
+                    <div class="col s2">
+                        <img class="responsive-img" src="{{ asset('img/deer2fw-1.png') }}" alt="" />
+                    </div>
                 </div>
+                
 
                 <br>
 

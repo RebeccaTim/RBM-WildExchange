@@ -30,7 +30,7 @@ class QuestionController extends Controller
         ));
     }
     */
-    
+
     /**
      * Creates a new question entity.
      *
@@ -56,7 +56,7 @@ class QuestionController extends Controller
             return $this->redirectToRoute('question_show', array('id' => $question->getId()));
         }
 
-        return $this->render('question/new.html.twig', array(
+        return $this->render('WCSWildExchangeBundle:question:new.html.twig', array(
             'question' => $question,
             'form' => $form->createView(),
         ));
@@ -70,7 +70,23 @@ class QuestionController extends Controller
     {
         $deleteForm = $this->createDeleteForm($question);
 
-        return $this->render('question/show.html.twig', array(
+
+//
+        //$id=getId();
+        $id=$question;
+
+        $em = $this->getDoctrine()->getManager();
+        $question=$em->getRepository('WCSWildExchangeBundle:Question')->find($id);
+
+        $question->setNbConsultation($question->getNbConsultation()+1);
+
+        $em->persist($question);
+        $em->flush();
+
+//
+
+
+        return $this->render('WCSWildExchangeBundle:question:show.html.twig', array(
             'question' => $question,
             'delete_form' => $deleteForm->createView(),
         ));

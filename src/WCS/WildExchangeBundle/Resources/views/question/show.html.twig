@@ -1,52 +1,118 @@
-{% extends 'base.html.twig' %}
+{#{% extends 'base.html.twig' %}#}
+{% extends 'homeBase.html.twig' %}
 
 {% block body %}
-    <h1>Question</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ question.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ question.titre }}</td>
-            </tr>
-            <tr>
-                <th>Datequestion</th>
-                <td>{% if question.dateQuestion %}{{ question.dateQuestion|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Nbconsultation</th>
-                <td>{{ question.nbConsultation }}</td>
-            </tr>
-            <tr>
-                <th>Contenu</th>
-                <td>{{ question.contenu }}</td>
-            </tr>
-            <tr>
-                <th>Statut</th>
-                <td>{{ question.statut }}</td>
-            </tr>
-            <tr>
-                <th>Followers</th>
-                <td>{{ question.followers }}</td>
-            </tr>
-        </tbody>
-    </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('question_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('question_edit', { 'id': question.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+<style>
+
+    body{
+        margin-left: 100px;
+    }
+
+    .titre{
+
+        border: solid 1px;
+        border-radius: 10px;
+
+        width: 80%;
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .textField{
+        height: 160px;
+        border: solid 1px;
+        border-radius: 10px;
+        word-wrap: break-word;
+    }
+
+    .zone{
+       width: 25%;
+       display:inline;
+    }
+
+
+    .legende{
+        color: red;
+        font-size: 15px;
+        margin-left: 50px;
+    }
+
+    .BulleQuestion{
+        background-color: #80CBC4;
+        border-radius: 20px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .BtnAction{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;    
+    }
+
+
+</style>
+
+
+    <h2>Question  {{ question.id }}</h2> 
+
+
+
+
+
+       <div class="BulleQuestion">
+            <div class="input-field">
+                <div class="row">
+                    <div class="titre  col s9 offset-s1">
+                        <span>Question : </span>{{ question.titre }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="textField col s9 offset-s1">
+                        {{ question.contenu }}
+                    </div>
+
+                    <div class="col s2">
+                        <img class="responsive-img" src="{{ asset('img/deer2fw-1.png') }}" alt="" />
+                    </div>                    
+                </div>
+
+                <div class="row">
+                    <div class="zone col s3 offset-s1">
+                     Création le {{ question.dateQuestion|date('d/m/Y') }} à {{ question.dateQuestion|date('H:i:s') }}
+                     </div>
+
+                    <div class="zone col offset-s3 s3">
+                     Nombre de consultation(s) : {{ question.nbConsultation }}
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="zone col s3 offset-s1">
+                        <a href="{{ path('wcs_wild_exchange_homepage') }} " class="waves-effect waves-light btn" >{{ "Retour aux questions" }}   </a>
+                    </div>
+
+                    <div class="zone col offset-s3 s3">
+                        <a href="{{ path('question_show', { 'id': question.id }) }} " class="waves-effect waves-light btn" >{{ "Repondre" }}   </a>
+                    </div>
+
+                </div>
+
+
+                
+
+
+
+            </div>
+
+        </div>
+
+
 {% endblock %}
