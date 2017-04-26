@@ -1,4 +1,8 @@
 services:
+    app.form.registration:
+        class: WCS\WildExchangeBundle\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: app_user_registration }
 #    wcs_wild_exchange.example:
 #        class: WCS\WildExchangeBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]

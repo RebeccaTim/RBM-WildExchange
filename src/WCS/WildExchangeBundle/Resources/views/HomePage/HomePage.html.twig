@@ -20,24 +20,24 @@
                         <input id="search" type="search" required >
                         <label class="label-icon" for="search">
                             <img class="iconsearch" src="img/icon_6.svg" alt="">
-                            <i class="material-icons">Rechercher</i>
+                            {# <i class="material-icons">search</i> #}
                         </label>
                         <i class="material-icons">close</i>
                     </div>
                 </form>
            </li>
-           <li id="questionbar">
+{#            <li id="questionbar">
                 <form>
                     <div class="input-field">
                         <input id="quest" type="search" required>
-                        <label class="label-icon" for="search">
+                        <label class="label-icon" for="quest">
                             <img class="iconsearch" src="img/icon_6copy.svg" alt="">
                             <i class="material-icons">Pose ta question</i>
                         </label>
                         <i class="material-icons">close</i>
                     </div>
                 </form>
-            </li>
+            </li> #}
 
             <!-- Dropdown Trigger -->
             <li id="drop">
@@ -118,6 +118,7 @@
         <a id="inscbtn" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">M'inscrire</a>
     </div>
 </div>
+<section> {% include "WCSWildExchangeBundle:question:index.html.twig" %}</section>
 
  <div id="test"></div> 
 

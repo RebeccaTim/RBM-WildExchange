@@ -312,38 +312,4 @@ class User extends BaseUser
     {
         return $this->phone;
     }
-
-    /**
-     * Add question
-     *
-     * @param \WCS\WildExchangeBundle\Entity\Question $question
-     *
-     * @return User
-     */
-    public function addQuestion(\WCS\WildExchangeBundle\Entity\Question $question)
-    {
-        $this->questions[] = $question;
-
-        return $this;
-    }
-
-    /**
-     * Remove question
-     *
-     * @param \WCS\WildExchangeBundle\Entity\Question $question
-     */
-    public function removeQuestion(\WCS\WildExchangeBundle\Entity\Question $question)
-    {
-        $this->questions->removeElement($question);
-    }
-
-    /**
-     * Get questions
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getQuestions()
-    {
-        return $this->questions;
-    }
 }

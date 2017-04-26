@@ -19,9 +19,9 @@
 }
 
 #profilebubble {
-    color: white;
+    color: #f9a02e;
     padding: 10px;
-    background-color: rgb( 255, 222, 165);
+    background-color: rgba( 255, 222, 165, 0.6);
     font-family: 'Source Sans Pro', sans-serif;
     max-width:80% ;
     min-width:90%;
@@ -37,7 +37,7 @@ label {
 
 select {
     color: white;
-    background-color: rgb( 255, 222, 165);
+    background-color: rgba( 255, 222, 165, 0.6);
     font-family: 'Source Sans Pro', sans-serif;
     display: none;
 }
