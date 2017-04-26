@@ -1,0 +1,24 @@
+reponse_index:
+    path:     /
+    defaults: { _controller: "WCSWildExchangeBundle:Reponse:index" }
+    methods:  GET
+
+reponse_show:
+    path:     /{id}/show
+    defaults: { _controller: "WCSWildExchangeBundle:Reponse:show" }
+    methods:  GET
+
+reponse_new:
+    path:     /new
+    defaults: { _controller: "WCSWildExchangeBundle:Reponse:new" }
+    methods:  [GET, POST]
+
+reponse_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WCSWildExchangeBundle:Reponse:edit" }
+    methods:  [GET, POST]
+
+reponse_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WCSWildExchangeBundle:Reponse:delete" }
+    methods:  DELETE

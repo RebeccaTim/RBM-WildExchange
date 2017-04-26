@@ -5,3 +5,7 @@ wcs_wild_exchange_question:
 wcs_wild_exchange_homepage:
     path:     /
     defaults: { _controller: WCSWildExchangeBundle:Homepage:index }
+
+wcs_wild_exchange_reponse:
+    resource: "@WCSWildExchangeBundle/Resources/config/routing/reponse.yml"
+    prefix:   /reponse
