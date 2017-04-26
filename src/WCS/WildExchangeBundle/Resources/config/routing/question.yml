@@ -1,8 +1,8 @@
-question_index:
-    path:     /
-    defaults: { _controller: "WCSWildExchangeBundle:Question:index" }
-    methods:  GET
-
+#question_index:
+#    path:     /
+#    defaults: { _controller: "WCSWildExchangeBundle:Question:index" }
+#    methods:  GET
+#
 question_show:
     path:     /{id}/show
     defaults: { _controller: "WCSWildExchangeBundle:Question:show" }

@@ -41,12 +41,13 @@ class Question
      * @ORM\Column(name="nbConsultation", type="integer")
      */
     private $nbConsultation;
-
+    
     /**
      * @var text
      *
      * @ORM\Column(name="contenu", type="text", length=60000)
      */
+
     private $contenu;
 
     /**
@@ -62,6 +63,20 @@ class Question
      * @ORM\Column(name="followers", type="string", length=255)
      */
     private $followers;
+//    private $followers=0;  serait juste aussi si pas de construct !!!!!!!
+
+
+
+//  Constructeur pour initialiser la date de la question
+    public function __construct ()
+{
+    $this->dateQuestion = new \DateTime();
+    $this->nbConsultation = 0;
+    $this->statut = 0;
+    $this->followers = 0;
+
+
+}
 
 
     /**

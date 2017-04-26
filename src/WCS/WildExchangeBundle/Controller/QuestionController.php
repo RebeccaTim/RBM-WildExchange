@@ -16,17 +16,21 @@ class QuestionController extends Controller
      * Lists all question entities.
      *
      */
+    //public function indexAction(Request $request)
+    /*  bye c'est mis dans le controlleur de homepage 
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
         $questions = $em->getRepository('WCSWildExchangeBundle:Question')->findAll();
 
-        return $this->render('question/index.html.twig', array(
-            'questions' => $questions,
+        //return $this->render('homeBase.html.twig', array(
+        return $this->render('WCSWildExchangeBundle:question:index.html.twig', array(
+            "questions" => $questions,
         ));
     }
-
+    */
+    
     /**
      * Creates a new question entity.
      *
@@ -39,21 +43,14 @@ class QuestionController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($question);
 
             // valorisation de champs cache
-            $question->setNbConsultation(0);
-            $question->setStatut(0);
-            $question->setFollowers(0);
+            //$question->setNbConsultation(0);
+            //$question->setStatut(0);
+            //$question->setFollowers(0);
+            //$question->setDateQuestion(new \DateTime());
 
-
-
-            $question->setDateQuestion(new \DateTime());
-
-            
-
-
-
+            $em->persist($question);
             $em->flush();
 
             return $this->redirectToRoute('question_show', array('id' => $question->getId()));
