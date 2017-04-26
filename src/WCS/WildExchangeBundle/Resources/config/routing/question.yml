@@ -1,0 +1,24 @@
+question_index:
+    path:     /
+    defaults: { _controller: "WCSWildExchangeBundle:Question:index" }
+    methods:  GET
+
+question_show:
+    path:     /{id}/show
+    defaults: { _controller: "WCSWildExchangeBundle:Question:show" }
+    methods:  GET
+
+question_new:
+    path:     /new
+    defaults: { _controller: "WCSWildExchangeBundle:Question:new" }
+    methods:  [GET, POST]
+
+question_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WCSWildExchangeBundle:Question:edit" }
+    methods:  [GET, POST]
+
+question_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WCSWildExchangeBundle:Question:delete" }
+    methods:  DELETE

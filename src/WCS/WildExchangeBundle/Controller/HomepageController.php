@@ -13,8 +13,14 @@ class HomepageController extends Controller
     {
         // replace this example code with whatever you need
 
-            return $this->render('WCSWildExchangeBundle:HomePage:HomePage.html.twig');
+        $em = $this->getDoctrine()->getManager();
 
+        $questions = $em->getRepository('WCSWildExchangeBundle:Question')->findAll();
+
+        //return $this->render('homeBase.html.twig', array(
+        return $this->render('WCSWildExchangeBundle:HomePage:HomePage.html.twig', array(
+            "questions" => $questions,
+        ));
 
     }
 }
