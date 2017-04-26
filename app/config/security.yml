@@ -23,9 +23,17 @@ security:
                 csrf_token_generator: security.csrf.token_manager
                 # if you are using Symfony < 2.8, use the following config instead:
                 # csrf_provider: form.csrf_provider
-
+                remember_me: true
+                default_target_path: /
             logout:       true
             anonymous:    true
+            remember_me:
+                secret: 1c016f6b09c122399c6cf19152492a0e159cd143
+                lifetime: 604800 # 1 week in seconds
+                path:     /
+                domain:   ~ # Defaults to the current domain from $_SERVER
+                # secure:   true
+                httponly: true
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }

@@ -222,28 +222,5 @@ class Question
     {
         return $this->followers;
     }
-
-    /**
-     * Set user
-     *
-     * @param \WCS\WildExchangeBundle\Entity\User $user
-     *
-     * @return Question
-     */
-    public function setUser(\WCS\WildExchangeBundle\Entity\User $user = null)
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return \WCS\WildExchangeBundle\Entity\User
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
 }
+

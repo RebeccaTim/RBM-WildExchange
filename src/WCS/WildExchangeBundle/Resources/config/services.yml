@@ -1,6 +1,6 @@
 services:
     app.form.registration:
-        class: AppBundle\Form\RegistrationType
+        class: WCS\WildExchangeBundle\Form\RegistrationType
         tags:
             - { name: form.type, alias: app_user_registration }
 #    wcs_wild_exchange.example:
