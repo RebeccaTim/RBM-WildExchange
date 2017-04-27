@@ -5,12 +5,12 @@ namespace WCS\WildExchangeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Notification
+ * Tag
  *
- * @ORM\Table(name="notification")
- * @ORM\Entity(repositoryClass="WCS\WildExchangeBundle\Repository\NotificationRepository")
+ * @ORM\Table(name="tag")
+ * @ORM\Entity(repositoryClass="WCS\WildExchangeBundle\Repository\TagRepository")
  */
-class Notification
+class Tag
 {
     /**
      * @var int
@@ -22,11 +22,11 @@ class Notification
     private $id;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="tag", type="string", length=255)
      */
-    private $date;
+    private $tag;
 
 
     /**
@@ -40,26 +40,27 @@ class Notification
     }
 
     /**
-     * Set date
+     * Set tag
      *
-     * @param \DateTime $date
+     * @param string $tag
      *
-     * @return Notification
+     * @return Tag
      */
-    public function setDate($date)
+    public function setTag($tag)
     {
-        $this->date = $date;
+        $this->tag = $tag;
 
         return $this;
     }
 
     /**
-     * Get date
+     * Get tag
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getDate()
+    public function getTag()
     {
-        return $this->date;
+        return $this->tag;
     }
 }
+

@@ -22,5 +22,7 @@ class HomepageController extends Controller
             "questions" => $questions,
         ));
 
+
+
     }
 }

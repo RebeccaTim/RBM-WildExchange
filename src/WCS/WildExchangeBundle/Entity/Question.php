@@ -82,6 +82,10 @@ class Question
     *@ORM\ManyToOne(targetEntity="User", inversedBy="questions")
     */
     private $user;
+    /**
+    *@ORM\OneToMany(targetEntity="Reponse", mappedBy="question")
+    */
+    private $reponses;
 
 
     /**
@@ -260,5 +264,39 @@ class Question
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Add reponse
+     *
+     * @param \WCS\WildExchangeBundle\Entity\Reponse $reponse
+     *
+     * @return Question
+     */
+    public function addReponse(\WCS\WildExchangeBundle\Entity\Reponse $reponse)
+    {
+        $this->reponses[] = $reponse;
+
+        return $this;
+    }
+
+    /**
+     * Remove reponse
+     *
+     * @param \WCS\WildExchangeBundle\Entity\Reponse $reponse
+     */
+    public function removeReponse(\WCS\WildExchangeBundle\Entity\Reponse $reponse)
+    {
+        $this->reponses->removeElement($reponse);
+    }
+
+    /**
+     * Get reponses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReponses()
+    {
+        return $this->reponses;
     }
 }

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Reponse</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ reponse.id }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ reponse.text }}</td>
+            </tr>
+            <tr>
+                <th>Nblike</th>
+                <td>{{ reponse.nbLike }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{% if reponse.dateCreation %}{{ reponse.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reponse_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('reponse_edit', { 'id': reponse.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

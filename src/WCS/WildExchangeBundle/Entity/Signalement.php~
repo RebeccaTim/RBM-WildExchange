@@ -94,3 +94,4 @@ class Signalement
         return $this->nbSignalement;
     }
 }
+

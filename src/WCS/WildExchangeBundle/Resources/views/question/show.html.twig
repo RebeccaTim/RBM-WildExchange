@@ -88,9 +88,43 @@
                      Création le {{ question.dateQuestion|date('d/m/Y') }} à {{ question.dateQuestion|date('H:i:s') }}
                      </div>
 
-                    <div class="zone col offset-s3 s3">
+                    <div class="zone col  s3">
+                    {{  question.user.username }}
+
+                    {% for reponse in question.reponses %}
+
+
+                  
+                <div class="row">
+
+
+                    <div class="zone col  s3">
+                    {% if question.user %}
+                        {{dump(question)}}
+                        {{dump(question.user)}}
+                    {% endif %}
+                    </div>
+
+                    <div class="zone col s4">
+                        <a href="{{ path('question_show', { 'id': question.id }) }} " class="waves-effect waves-light btn" >{{ "Developper" }}   </a>
+                    </div>
+
+
+                </div>
+
+
+
+
+                    {% endfor %}
+                     </div>
+
+                    <div class="zone col  s3">
                      Nombre de consultation(s) : {{ question.nbConsultation }}
                     </div>
+
+
+
+
                 </div>
 
                 <div class="row">
@@ -98,12 +132,16 @@
                     <div class="zone col s3 offset-s1">
                         <a href="{{ path('wcs_wild_exchange_homepage') }} " class="waves-effect waves-light btn" >{{ "Retour aux questions" }}   </a>
                     </div>
-
+<!--
                     <div class="zone col offset-s3 s3">
                         <a href="{{ path('question_show', { 'id': question.id }) }} " class="waves-effect waves-light btn" >{{ "Repondre" }}   </a>
                     </div>
-
+-->
+                    <div class="zone col offset-s3 s3">
+                        <a href="{{ path('reponse_new',{ 'id_question': question.id })  }} " class="waves-effect waves-light btn" >{{ "Repondre" }}   </a>
+                    </div>
                 </div>
+
 
 
                 

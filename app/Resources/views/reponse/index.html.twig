@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Reponses list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Text</th>
+                <th>Nblike</th>
+                <th>Datecreation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reponse in reponses %}
+            <tr>
+                <td><a href="{{ path('reponse_show', { 'id': reponse.id }) }}">{{ reponse.id }}</a></td>
+                <td>{{ reponse.text }}</td>
+                <td>{{ reponse.nbLike }}</td>
+                <td>{% if reponse.dateCreation %}{{ reponse.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('reponse_show', { 'id': reponse.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('reponse_edit', { 'id': reponse.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reponse_new') }}">Create a new reponse</a>
+        </li>
+    </ul>
+{% endblock %}
