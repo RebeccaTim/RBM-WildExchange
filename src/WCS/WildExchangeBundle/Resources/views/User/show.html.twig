@@ -10,11 +10,11 @@
         <form  class="col s8 offset-s2 talk-bubble tri-right round btm-left talktext" method="POST" id='profilebubble'>
             <div class="row">
                 <div class=" col s4 offset-2">
-                    <img id="avatar" src="#" alt="Un petit soucis mais on sait que t'as la Wild Attitude" />
+                    <img id="avatarShow" src="{{ asset('img/deer2fw.png') }}" alt="Un petit soucis mais on sait que t'as la Wild Attitude" />
                 </div>
 
                 <div class="input-field col s4 offset-s1">
-                    <div>{{ user.username }}</div>
+                    <p>{{ user.username }}</p>
 
                 </div>
             </div>
@@ -22,13 +22,13 @@
             <div class="row">
                 <div class="input-field col s4 offset-s1">
                     <i class="material-icons prefix">account_circle</i>
-                    <div>{{ user.firstname }}</div>
+                    <p>{{ user.firstname }}</p>
 
 
                 </div>
 
                 <div class="input-field col s4 offset-s1">
-                    <div>{{ user.lastname }}</div>
+                    <p>{{ user.lastname }}</p>
 
                 </div>
             </div>
@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="input-field col s9 offset-s1">
                     <i class="material-icons prefix">email</i>
-                    <div>{{ user.email }}</div>
+                    <p>{{ user.email }}</p>
 
                 </div>
             </div>
@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="input-field col s9 offset-s1">
                     <i class="material-icons prefix">phone</i>
-                    <div>{{ user.phone }}</div>
+                    <p>{{ user.phone }}</p>
 
                 </div>
             </div>
@@ -52,14 +52,14 @@
             <div class="row">
                 <div class="input-field col s9 offset-s1">
                     <i class="material-icons prefix">star</i>
-                    <div> interest</div>
+                    <p> interest</p>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s9 offset-s1">
                     <i class="material-icons prefix">mode_edit</i>
-                    <div> {{ user.description }}</div>
+                    <p> {{ user.description }}</p>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@
             <div class="row" id="situation" >
                 <div class="input-field col s9 offset-s1">
                     <i class="material-icons prefix">android</i>
-                    <div>   {{ user.situation }}</div>
+                    <p>   {{ user.situation }}</p>
 
 
                 </div>

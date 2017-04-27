@@ -57,12 +57,19 @@ select {
 }
 
 #avatar {
-    display: inline;
     height: 100px;
     width: 100px;
     justify-content: left;
     display: none;
 }
+
+#avatarShow {
+    height: 100px;
+    width: 100px;
+    justify-content: left;
+
+}
+
 
 .js .inputfile {
     width: 0.1px;

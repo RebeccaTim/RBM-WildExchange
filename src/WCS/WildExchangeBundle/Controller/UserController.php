@@ -15,9 +15,6 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
  */
 class UserController extends Controller
 {
-    /**
-     * Show the user.
-     */
     public function showAction()
     {
         $user = $this->getUser();
