@@ -31,8 +31,15 @@ class ReponseController extends Controller
      * Creates a new reponse entity.
      *
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request,$id_question)
     {
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  //Recupere l'utilisateur ?
+            $em = $this->getDoctrine()->getManager();
+        $question=$em->getRepository('WCSWildExchangeBundle:Question')->find($id_question);
+
+//
         $reponse = new Reponse();
         $form = $this->createForm('WCS\WildExchangeBundle\Form\ReponseType', $reponse);
         $form->handleRequest($request);
@@ -46,8 +53,8 @@ class ReponseController extends Controller
         }
 
         return $this->render('reponse/new.html.twig', array(
-            'reponse' => $reponse,
             'form' => $form->createView(),
+            'question'=> $question,
         ));
     }
 

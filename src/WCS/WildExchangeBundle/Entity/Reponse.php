@@ -43,6 +43,17 @@ class Reponse
     private $dateCreation;
 
 
+//  Constructeur pour initialiser la date de la question
+    public function __construct ()
+{
+    $this->dateCreation = new \DateTime();
+    $this->nbLike = 0;
+
+}
+
+
+
+
     /**
     *@ORM\ManyToOne(targetEntity="User", inversedBy="reponses")
     */

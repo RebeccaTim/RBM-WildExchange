@@ -9,7 +9,7 @@ reponse_show:
     methods:  GET
 
 reponse_new:
-    path:     /new
+    path:     /{id_question}/new
     defaults: { _controller: "WCSWildExchangeBundle:Reponse:new" }
     methods:  [GET, POST]
 

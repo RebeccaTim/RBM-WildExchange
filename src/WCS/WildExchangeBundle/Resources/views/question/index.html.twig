@@ -91,6 +91,13 @@
                      Création le {{ question.dateQuestion|date('d/m/Y') }} à {{ question.dateQuestion|date('H:i:s') }}
                      </div>
 
+                    <div class="zone col  s3">
+                    {% if question.user %}
+{{dump(question)}}
+{{dump(question.user)}}
+                    {% endif %}
+                    </div>
+
                     <div class="zone col s4">
                         <a href="{{ path('question_show', { 'id': question.id }) }} " class="waves-effect waves-light btn" >{{ "Developper" }}   </a>
                     </div>

@@ -13,7 +13,8 @@ class ReponseType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('text')->add('nbLike')->add('dateCreation');
+        //$builder->add('text')->add('nbLike')->add('dateCreation');
+        $builder->add('text');
     }
     
     /**

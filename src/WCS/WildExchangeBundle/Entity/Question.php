@@ -82,6 +82,10 @@ class Question
     *@ORM\ManyToOne(targetEntity="User", inversedBy="questions")
     */
     private $user;
+    /**
+    *@ORM\OneToMany(targetEntity="Reponse", mappedby="question")
+    */
+    private $reponses;
 
 
     /**

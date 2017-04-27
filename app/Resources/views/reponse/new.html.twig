@@ -1,10 +1,130 @@
-{% extends 'base.html.twig' %}
+{% extends 'homeBase.html.twig' %}
 
 {% block body %}
     <h1>Reponse creation</h1>
 
+
+<style>
+
+    body{
+        margin-left: 100px;
+    }
+
+    textarea{
+        height: 100px;
+        /*border: solid 1px;
+        border-radius: 10px;*/
+    }
+
+    .legende{
+        color: red;
+        font-size: 15px;
+        margin-left: 50px;
+
+    }
+
+    .BulleQuestion{
+        background-color: #80CBC4;
+        border-radius: 20px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h2{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;  
+    }
+
+
+</style>
+
+
+
+
+
     {{ form_start(form) }}
-        {{ form_widget(form) }}
+
+
+
+<div class="BulleQuestion">
+            <div class="input-field">
+                <div class="row">
+                    <div class="titre  col s9 offset-s1">
+                    {% if question.user %}
+                        <span>Question : </span>{{ question.titre }}
+                    {% endif %}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="textField col s9 offset-s1">
+                        {{ question.contenu }}
+<!--                        
+                    {% if question.user %}
+                        {{dump(question)}}
+                        {{dump(question.user)}}
+                    {% endif %}
+
+-->
+                    </div>
+
+                    <div class="col s2">
+                        <img class="responsive-img" src="{{ asset('img/deer2fw-1.png') }}" alt="" />
+                    </div>                    
+                </div>
+
+                <div class="row">
+                    <div class="zone col s3 offset-s1">
+                     Création le {{ question.dateQuestion|date('d/m/Y') }} à {{ question.dateQuestion|date('H:i:s') }}
+                     </div>
+
+                    <div class="zone col  s3">
+                    {{  question.user.username }}
+
+                     </div>
+
+                    <div class="zone col  s3">
+                     Nombre de consultation(s) : {{ question.nbConsultation }}
+                    </div>
+
+
+
+
+                </div>
+
+                <div class="row">
+
+                    <div class="zone col s3 offset-s1">
+                        <a href="{{ path('question_show', { 'id': question.id }) }}  " class="waves-effect waves-light btn" >{{ "Retour à la questions" }}   </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+        <div class="input-field">
+                <div class="row">
+                    <div class="textField col s9 offset-s1">
+                    {{ form_widget(form.text) }}
+                    {{ form_label(form.text) }}
+                    </div>
+
+                    <div class="col s2">
+                        <img class="responsive-img" src="{{ asset('img/deer2fw-1.png') }}" alt="" />
+                    </div>                    
+                </div>
+
+
+        </div>
+
+
+
         <input type="submit" value="Create" />
     {{ form_end(form) }}
 
