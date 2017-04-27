@@ -1,3 +1,9 @@
+body {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
 ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: white;
@@ -19,46 +25,30 @@
 }
 
 #profilebubble {
-    color: #f9a02e;
-    padding: 10px;
-    background-color: rgba( 255, 222, 165, 0.6);
+    color: white;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: rgb( 255, 222, 165);
     font-family: 'Source Sans Pro', sans-serif;
-    max-width:80% ;
-    min-width:90%;
 }
 
 label {
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: medium;
-    margin-left: 20px;
-    max-width: 200px;
 }
 
-select {
-    color: white;
-    background-color: rgba( 255, 222, 165, 0.6);
-    font-family: 'Source Sans Pro', sans-serif;
-    display: none;
-}
 .row {
     margin: auto;
 }
 
-.buttonrow {
-    padding:3px;
+.bottom-row {
+    min-height: 200px;
 }
 
-.bottom-row {
-    justify-content:center;}
-
-
-#avatar {
-    display: inline;
+img {
     height: 100px;
     width: 100px;
     justify-content: left;
-    display: none;
 }
 
 .js .inputfile {
@@ -86,19 +76,26 @@ select {
 
 .inputfile-1+label {
     color: #f1e5e6;
-    background-color: #2BBBAD;
+    background-color: #d3394c;
 }
 
 .inputfile-1:focus+label,
 .inputfile-1.has-focus+label,
 .inputfile-1+label:hover {
-
-    background-color: rgb(251, 168, 88);
+    background-color: #722040;
 }
 
 #answer {
     display: none;
 }
+
+
+/* container */
+
+.container {
+    padding: 5% 5%;
+}
+
 
 /* CSS talk bubble */
 
@@ -143,9 +140,4 @@ select {
     /* remove webkit p margins */
     -webkit-margin-before: 0em;
     -webkit-margin-after: 0em;
-}
-
-#file-1 {
-
-    paddin-top: 10px;
 }
