@@ -7,9 +7,9 @@
 
     <div class="container">
 
-        <form  class="col s8 offset-s2 talk-bubble tri-right round btm-left talktext" method="POST" id='profilebubble'>
+        <form  class="col s8 offset-s2 talk-bubble tri-right round btm-left talktext"  method="POST" id='profilebubble'>
             <div class="row">
-                <div class=" col s4 offset-2">
+                <div class="input-field  col s4 offset-2">
                     <img id="avatarShow" src="{{ asset('img/deer2fw.png') }}" alt="Un petit soucis mais on sait que t'as la Wild Attitude" />
                 </div>
 
@@ -82,10 +82,15 @@
             </div>
 
             <div class="row buttonrow">
-                <button class="btn waves-effect waves-light wildbtn col s6 offset-s3" type="submit" onclick="window.location.href='WCS/WildExchangeBundle/Ressources/config/views/User/edit'" name="action">
-                    Modifier
-                    <i class="material-icons right">input</i>
-                </button>
+                                 <a id="editrouting" href="{{ path('wcs_wild_exchange_user_edit')}}" >
+                                     <button class="btn waves-effect waves-light wildbtn col s6 offset-s3" type="submit" name="action">
+                                     Modifier
+                                         <i class="material-icons right">input</i>
+                                     </button>
+                                 </a>
+
+
+
             </div>
 
         </form>

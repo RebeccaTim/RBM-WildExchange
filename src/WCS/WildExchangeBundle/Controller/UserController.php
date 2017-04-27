@@ -40,7 +40,7 @@ class UserController extends Controller
 
 
             $em->flush();
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('wcs_wild_exchange_user_edit');
         }
 
         return $this->render('WCSWildExchangeBundle:User:edit.html.twig');
