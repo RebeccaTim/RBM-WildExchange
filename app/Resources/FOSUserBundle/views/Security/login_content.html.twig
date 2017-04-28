@@ -21,12 +21,15 @@
     <div class="input-field col s6">
         <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
         <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+
     </div>
 
-    <div id="m2footer">
-        <a id="inscbtn" href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">
-            <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" /> 
-        </a>
-    </div>
+
+
+        <div class="row buttonrow">
+            <button class="btn waves-effect waves-light wildbtn col s6 offset-s3" type="submit"  name="_submit" value="{{ 'security.login.submit'|trans }}">
+                Enregistrer
+                <i class="material-icons right">input</i>
+            </button>
+        </div>
 </form>
-</div>

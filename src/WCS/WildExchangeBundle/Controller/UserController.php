@@ -45,4 +45,13 @@ class UserController extends Controller
 
         return $this->render('WCSWildExchangeBundle:User:edit.html.twig');
     }
+
+    /*public function deleteAction ($user){
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+        $em = $this->getDoctrine()->getManager() ->deleteUser($user);
+        return $this->redirect($this->generateUrl('wcs_wild_exchange_homepage'));
+
+    }
+
+}*/
 }

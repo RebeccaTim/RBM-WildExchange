@@ -1,4 +1,4 @@
-{% trans_default_domain 'FOSUserBundle' %}
+
 {% block body %}
 
 <div class="container">
@@ -33,16 +33,15 @@
 
 
         <div class="row ">
-            <button class="btn waves-effect waves-light wildbtn col s6 offset-s3" type="submit"  name="action"  value="{{ 'registration.submit'|trans }} onclick="window.location.href='/user/edit'">
+            <button class="btn waves-effect waves-light  col s6 offset-s3 wildbtn" type="submit"  name="action"  value="{{ 'registration.submit'|trans }}" onclick="window.location.href='/'">
                 Enregistrer
                 <i class="material-icons right">input</i>
             </button>
         </div>
+        {{ form_end(form) }}
 
     </form>
 
 </div>
-    {{ form_end(form) }}
-
 
 {% endblock %}
