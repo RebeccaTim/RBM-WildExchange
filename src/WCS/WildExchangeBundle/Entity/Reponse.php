@@ -24,7 +24,7 @@ class Reponse
     /**
      * @var string
      *
-     * @ORM\Column(name="text", type="string", length=255)
+     * @ORM\Column(name="text", type="text", length=60000)
      */
     private $text;
 

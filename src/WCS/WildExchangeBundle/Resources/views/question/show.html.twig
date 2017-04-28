@@ -3,7 +3,6 @@
 
 {% block body %}
 
-
             <div class="BulleQuestion">
 
 
@@ -11,7 +10,7 @@
 
                      <div class="row">
                          <div id="questavatar" class="col s2">
-                             <img class="responsive-img" src="{{ asset('img/deer2fw-1.png') }}" alt="" />
+                             <img class="responsive-img" src="{{ question.user.urlAvatar }}" alt="" />
                              <span> {{question.user.username}}</span>
                          </div>
                          <div id="coin" class="col s1">
@@ -46,16 +45,25 @@
                          </div>
                      </div>
 
+                    {% for reponse in question.reponses %}
+                        {{ reponse.text }}
+                    {% endfor %}
                      <div id="bottomquest" class="row">
 
                          <div id="backtoquest" class="zone col s3 ">
                              <a href="{{ path('wcs_wild_exchange_homepage') }} " class="waves-effect waves-light btn" >{{ "Retour aux questions" }}   </a>
                          </div>
                           <div class="zone col s6"></div>
+                          {% if app.user %}
                          <div id="answerbtn" class="zone col s3">
-                             <a href="{{ path('question_show', { 'id': question.id }) }} " class="waves-effect waves-light btn" >{{ "Repondre" }}   </a>
-                         </div>
+                            <a href="{{ path('reponse_new', { 'id_question': question.id }) }} " class="waves-effect waves-light btn" >{{ "Repondre" }}   </a>
+                        </div>
+                    {% else %}
 
+                         <div id="answerbtn" class="zone col s3">
+                            <a href="{{ path('fos_user_security_login') }} " class="waves-effect waves-light btn" >{{ "Se connecter" }}   </a>
+                        </div>
+                    {% endif %}
                      </div>
                  </div>
              </div>

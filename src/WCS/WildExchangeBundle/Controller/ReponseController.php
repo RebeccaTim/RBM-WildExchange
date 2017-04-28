@@ -46,10 +46,11 @@ class ReponseController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $reponse->setQuestion($question);
             $em->persist($reponse);
             $em->flush();
 
-            return $this->redirectToRoute('reponse_show', array('id' => $reponse->getId()));
+            return $this->redirectToRoute('question_show', array('id' => $reponse->getQuestion()->getId()));
         }
 
         return $this->render('reponse/new.html.twig', array(

@@ -341,6 +341,15 @@ text-align: center;
 #btnquest i:hover{
     background-color: #26a69a;
 }
+#btnansw i{
+    background-color: #f9a02e;
+    border-radius: 20px;
+    float: right;
+    margin-right: 50px;
+}
+#btnansw i:hover{
+    background-color: #26a69a;
+}
 
 #content {
     margin-left:200px; 

@@ -7,7 +7,6 @@
 <style>
 
     body{
-        margin-left: 100px;
     }
 
     textarea{
@@ -24,8 +23,8 @@
     }
 
     .BulleQuestion{
-        background-color: #80CBC4;
-        border-radius: 20px;
+/*        background-color: #80CBC4;
+*/        border-radius: 20px;
         width: 80%;
         margin-left: auto;
         margin-right: auto;
@@ -36,6 +35,9 @@
         margin-left: auto;
         margin-right: auto;  
     }
+    #questarea{
+        float: right;
+    }
 
 
 </style>
@@ -44,93 +46,81 @@
 
 
 
-    {{ form_start(form) }}
+    
 
 
 
 <div class="BulleQuestion">
-            <div class="input-field">
+
+
+    <div class="input-field">
+
+        <div class="row">
+            <div id="questavatar" class="col s2">
+                <img class="responsive-img" src="{{ question.user.urlAvatar }}" alt="" />
+                <span> {{question.user.username}}</span>
+            </div>
+            <div id="coin" class="col s1">
+                <img id="coinbulle"{# class="responsive-img" #} src="{{ asset('img/geosvg_1-1.svg') }}" alt="" />
+            </div>
+            <div id="littlebubble" class="col s9">
                 <div class="row">
                     <div class="titre  col s9 offset-s1">
-                    {% if question.user %}
-                        <span>Question : </span>{{ question.titre }}
-                    {% endif %}
+                        <span>{{ question.titre }}</span>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="textField col s9 offset-s1">
-                        {{ question.contenu }}
-<!--                        
-                    {% if question.user %}
-                        {{dump(question)}}
-                        {{dump(question.user)}}
-                    {% endif %}
-
--->
+                        {{ question.contenu|nl2br }}
                     </div>
-
-                    <div class="col s2">
-                        <img class="responsive-img" src="{{ asset('img/deer2fw-1.png') }}" alt="" />
-                    </div>                    
                 </div>
-
-                <div class="row">
-                    <div class="zone col s3 offset-s1">
-                     Création le {{ question.dateQuestion|date('d/m/Y') }} à {{ question.dateQuestion|date('H:i:s') }}
-                     </div>
-
-                    <div class="zone col  s3">
-                    {{  question.user.username }}
-
-                     </div>
-
-                    <div class="zone col  s3">
-                     Nombre de consultation(s) : {{ question.nbConsultation }}
-                    </div>
-
-
-
-
-                </div>
-
-                <div class="row">
-
-                    <div class="zone col s3 offset-s1">
-                        <a href="{{ path('question_show', { 'id': question.id }) }}  " class="waves-effect waves-light btn" >{{ "Retour à la questions" }}   </a>
-                    </div>
-
-                </div>
-
             </div>
+        </div>
+    
+
+        <br>
+
+        <div id="infoquest" class="row">
+            <div class="zone col s3"></div>
+            <div class="zone col s3">
+             le {{ question.dateQuestion|date('d/m/Y') }} à {{ question.dateQuestion|date('H:i:s') }}
+             </div>
+             <div class="zone col s3"></div>
+            <div class="zone col s3">
+             Nombre de consultation(s) : {{ question.nbConsultation }}
+            </div>
+        </div>
+
+        <div id="bottomquest" class="row">
+
+{#             <div id="backtoquest" class="zone col s3 ">
+                <a href="{{ path('wcs_wild_exchange_homepage') }} " class="waves-effect waves-light btn" >{{ "Retour aux questions" }}   </a>
+            </div> #}
+       </div>
+    </div>
 
 
-
-
-
+{{ form_start(form) }}
         <div class="input-field">
                 <div class="row">
-                    <div class="textField col s9 offset-s1">
+            <div id="questarea" class="input-field col s6 textform">
                     {{ form_widget(form.text) }}
                     {{ form_label(form.text) }}
-                    </div>
-
-                    <div class="col s2">
-                        <img class="responsive-img" src="{{ asset('img/deer2fw-1.png') }}" alt="" />
-                    </div>                    
+            </div>                
                 </div>
-
-
         </div>
 
 
 
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        <div id="btnansw">
+            <input class = "btn waves-effect waves-light" type="submit" value="Creer" />
+        </div>
+            {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('reponse_index') }}">Back to the list</a>
+            <a href="{{ path('question_index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to the list</a>
         </li>
     </ul>
 {% endblock %}
