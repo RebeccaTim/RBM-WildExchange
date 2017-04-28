@@ -1,29 +1,48 @@
 {% trans_default_domain 'FOSUserBundle' %}
+{% block body %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+<div class="container">
 
- <div class="input-field col s6">
+    <form  class="col s8 offset-s2 talk-bubble tri-right round btm-left talktext"  method="POST" id='profilebubble'>
+        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+
+ <div class="input-field col s9 offset-s1">
     {{ form_widget(form.email) }}     
     {{ form_label(form.email) }}     
  </div>
 
- <div class="input-field col s6">
+ <div class="input-field col s9 offset-s1">
     {{ form_widget(form.username) }}     
     {{ form_label(form.username) }}     
  </div>
 
- <div class="input-field col s6">
-    {{ form_widget(form.plainPassword.first) }}     
+ <div class="input-field col s9 offset-s1">
+     <i class="material-icons left">lock</i>
+
+     {{ form_widget(form.plainPassword.first) }}
     {{ form_label(form.plainPassword.first) }}     
  </div>
 
- <div class="input-field col s6">
-    {{ form_widget(form.plainPassword.second) }}     
-    {{ form_label(form.plainPassword.second) }}     
- </div>
-<div id ="btnregister">
-    <input class = "btn waves-effect waves-light" type="submit" value="{{ 'registration.submit'|trans }}" />
-</div>
-{{ form_end(form) }}
+ <div class="input-field col s9 offset-s1">
+     <i class="material-icons" left>lock</i>
 
- 
+     {{ form_widget(form.plainPassword.second) }}
+    {{ form_label(form.plainPassword.second) }}
+ </div>
+
+
+        <div class="row ">
+            <button class="btn waves-effect waves-light wildbtn col s6 offset-s3" type="submit"  name="action"  value="{{ 'registration.submit'|trans }} onclick="window.location.href='/user/edit'">
+                Enregistrer
+                <i class="material-icons right">input</i>
+            </button>
+        </div>
+
+    </form>
+
+</div>
+    {{ form_end(form) }}
+
+
+{% endblock %}

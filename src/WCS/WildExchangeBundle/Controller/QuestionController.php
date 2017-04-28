@@ -3,6 +3,7 @@
 namespace WCS\WildExchangeBundle\Controller;
 
 use WCS\WildExchangeBundle\Entity\Question;
+use WCS\WildExchangeBundle\Controller\UserController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -46,7 +47,6 @@ class QuestionController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
 
             // valorisation de champs cache
             //$question->setNbConsultation(0);
