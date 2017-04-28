@@ -36,13 +36,17 @@ class ReponseController extends Controller
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   //Recupere l'utilisateur ?
-            $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
         $question=$em->getRepository('WCSWildExchangeBundle:Question')->find($id_question);
 
 //
         $reponse = new Reponse();
         $form = $this->createForm('WCS\WildExchangeBundle\Form\ReponseType', $reponse);
         $form->handleRequest($request);
+
+ //     id de question ou objet question?!!!!!!!!!!!!!!!!!!
+        $reponse->setQuestion($id_question);
+ //       
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
