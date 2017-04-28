@@ -3,73 +3,11 @@
 
 {% block body %}
 
-
-<style>
-
-    body{
-        margin-left: 100px;
-    }
-
-    .titre{
-
-        border: solid 1px;
-        border-radius: 10px;
-
-        width: 80%;
-        font-size: 20px;
-        font-weight: bold;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .textField{
-        height: 160px;
-        border: solid 1px;
-        border-radius: 10px;
-        word-wrap: break-word;
-    }
-
-    .zone{
-       width: 25%;
-       display:inline;
-    }
-
-
-    .legende{
-        color: red;
-        font-size: 15px;
-        margin-left: 50px;
-    }
-
-    .BulleQuestion{
-        background-color: #80CBC4;
-        border-radius: 20px;
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .BtnAction{
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;    
-    }
-
-
-</style>
-
-
-    <h2>Question  {{ question.id }}</h2> 
-
-
-
-
-
-       <div class="BulleQuestion">
+{#        <div class="BulleQuestion">
             <div class="input-field">
                 <div class="row">
                     <div class="titre  col s9 offset-s1">
-                        <span>Question : </span>{{ question.titre }}
+                        <span>{{ question.titre }}</span>
                     </div>
                 </div>
 
@@ -85,7 +23,7 @@
 
                 <div class="row">
                     <div class="zone col s3 offset-s1">
-                     Création le {{ question.dateQuestion|date('d/m/Y') }} à {{ question.dateQuestion|date('H:i:s') }}
+                     Le {{ question.dateQuestion|date('d/m/Y') }} à {{ question.dateQuestion|date('H:i:s') }}
                      </div>
 
                     <div class="zone col offset-s3 s3">
@@ -105,14 +43,64 @@
 
                 </div>
 
-
-                
-
-
-
             </div>
 
-        </div>
+        </div> #}
+
+            <div class="BulleQuestion">
+
+
+                 <div class="input-field">
+
+                     <div class="row">
+                         <div id="questavatar" class="col s2">
+                             <img class="responsive-img" src="{{ asset('img/deer2fw-1.png') }}" alt="" />
+                             <span> {{question.user.username}}</span>
+                         </div>
+                         <div id="coin" class="col s1">
+                             <img id="coinbulle"{# class="responsive-img" #} src="{{ asset('img/geosvg_1-1.svg') }}" alt="" />
+                         </div>
+                         <div id="littlebubble" class="col s9">
+                             <div class="row">
+                                 <div class="titre  col s9 offset-s1">
+                                     <span>{{ question.titre }}</span>
+                                 </div>
+                             </div>
+
+                             <div class="row">
+                                 <div class="textField col s9 offset-s1">
+                                     {{ question.contenu|nl2br }}
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+
+                     <br>
+
+                     <div id="infoquest" class="row">
+                         <div class="zone col s3"></div>
+                         <div class="zone col s3">
+                          le {{ question.dateQuestion|date('d/m/Y') }} à {{ question.dateQuestion|date('H:i:s') }}
+                          </div>
+                          <div class="zone col s3"></div>
+                         <div class="zone col s3">
+                          Nombre de consultation(s) : {{ question.nbConsultation }}
+                         </div>
+                     </div>
+
+                     <div id="bottomquest" class="row">
+
+                         <div id="backtoquest" class="zone col s3 ">
+                             <a href="{{ path('wcs_wild_exchange_homepage') }} " class="waves-effect waves-light btn" >{{ "Retour aux questions" }}   </a>
+                         </div>
+                          <div class="zone col s6"></div>
+                         <div id="answerbtn" class="zone col s3">
+                             <a href="{{ path('question_show', { 'id': question.id }) }} " class="waves-effect waves-light btn" >{{ "Repondre" }}   </a>
+                         </div>
+
+                     </div>
+                 </div>
+             </div>
 
 
 {% endblock %}

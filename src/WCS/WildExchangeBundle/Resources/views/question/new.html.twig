@@ -4,82 +4,36 @@
 
 {% block body %}
 
-<style>
-
-    body{
-        margin-left: 100px;
-    }
-
-    #titre{
-
-
-    }
-
-    textarea{
-        height: 100px;
-        /*border: solid 1px;
-        border-radius: 10px;*/
-    }
-
-    .legende{
-        color: red;
-        font-size: 15px;
-        margin-left: 50px;
-
-    }
-
-    .BulleQuestion{
-        background-color: #80CBC4;
-        border-radius: 20px;
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    h2{
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;  
-    }
-
-    .BtnAction{
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;    
-    }
-
-
-</style>
 
     <!--<h1>Question creation</h1>-->
 
 
     {{ form_start(form) }}     
 
-        <h2>Création de la question</h2>
+        <h2>Posez votre question</h2>
 
         <!--{ form_errors(form.titre) }} -->
-        <div class="BulleQuestion">
+        <div id="questcontent">
 
-            <div class="input-field col s6">
+            <div class="input-field col s6 textform">
                     {{ form_widget(form.titre) }}
                     {{ form_label(form.titre) }}
             </div>
 
-            <div class="input-field col s6">
+            <div id="questarea" class="input-field col s6 textform">
                     {{ form_widget(form.contenu) }}
                     {{ form_label(form.contenu) }}
             </div>
         </div>
          
-        <div class="BtnAction">
-            <input type="submit" value="Create"/>
+        <div id="btnquest">
+            <input class = "btn waves-effect waves-light" type="submit" value="Creer" />
         </div>
 
     {{ form_end(form) }}
     <ul>
         <li>
-            <a href="{{ path('question_index') }}">Back to the list</a>
+            <a href="{{ path('question_index') }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to the list</a>
         </li>
     </ul>
 {% endblock %}

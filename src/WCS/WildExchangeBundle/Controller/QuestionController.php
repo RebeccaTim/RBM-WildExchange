@@ -37,6 +37,10 @@ class QuestionController extends Controller
      */
     public function newAction(Request $request)
     {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+
         $question = new Question();
         $form = $this->createForm('WCS\WildExchangeBundle\Form\QuestionType', $question);
         $form->handleRequest($request);

@@ -6,38 +6,31 @@
 
 <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">Popularité</a></li>
-  <li><a href="#!">Recent</a></li>
+  <li><a href="{{ path('wcs_wild_exchange_homepage') }}?sort=consultdesc">Popularité</a></li>
+  <li><a href="{{ path('wcs_wild_exchange_homepage') }}">Recent</a></li>
   <li class="divider"></li>
 </ul>
 
 <nav id = "nav2">
     <div class="nav-wrapper">
         <ul class="right hide-on-med-and-down">
-            <li id="searchbar">
+{#             <li id="searchbar">
                 <form>
                     <div class="input-field">
                         <input id="search" type="search" required >
                         <label class="label-icon" for="search">
                             <img class="iconsearch" src="img/icon_6.svg" alt="">
-                            {# <i class="material-icons">search</i> #}
+                            {# <i class="material-icons">search</i> 
                         </label>
                         <i class="material-icons">close</i>
                     </div>
                 </form>
-           </li>
-{#            <li id="questionbar">
-                <form>
-                    <div class="input-field">
-                        <input id="quest" type="search" required>
-                        <label class="label-icon" for="quest">
-                            <img class="iconsearch" src="img/icon_6copy.svg" alt="">
-                            <i class="material-icons">Pose ta question</i>
-                        </label>
-                        <i class="material-icons">close</i>
-                    </div>
-                </form>
-            </li> #}
+           </li> #}
+            <li id="questionbar">
+                <div>
+                    <a id="" href="{{path('question_new')}}" class="modal-action modal-close waves-effect waves-green btn-flat">Créer une question</a>
+                </div>
+            </li>
 
             <!-- Dropdown Trigger -->
             <li id="drop">
