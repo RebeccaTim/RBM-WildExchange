@@ -4,7 +4,9 @@
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 
-<form action="{{ path("fos_user_security_check") }}" method="post">
+<div class="container">
+
+    <form  action="{{ path("fos_user_security_check") }}" class="col s8 offset-s2 talk-bubble tri-right round btm-left talktext"  method="POST" id='profilebubble'>
     {% if csrf_token %}
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
     {% endif %}
@@ -27,3 +29,4 @@
         </a>
     </div>
 </form>
+</div>
