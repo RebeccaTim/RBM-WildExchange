@@ -63,3 +63,4 @@ class Notification
         return $this->date;
     }
 }
+

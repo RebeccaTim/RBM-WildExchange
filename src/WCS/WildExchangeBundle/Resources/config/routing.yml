@@ -13,3 +13,7 @@ wcs_wild_exchange_user_edit:
 wcs_wild_exchange_user_show:
     path:     user/show
     defaults: { _controller: WCSWildExchangeBundle:User:show }
+
+wcs_wild_exchange_reponse:
+    resource: "@WCSWildExchangeBundle/Resources/config/routing/reponse.yml"
+    prefix:   /reponse

@@ -52,7 +52,7 @@ class User extends BaseUser
     /**
      * @var int
      *
-     * @ORM\Column(name="phone", type="integer", nullable=true)
+     * @ORM\Column(name="phone", type="string",  length=255, nullable=true)
      */
     private $phone;
 
@@ -311,5 +311,39 @@ class User extends BaseUser
     public function getPhone()
     {
         return $this->phone;
+    }
+
+    /**
+     * Add question
+     *
+     * @param \WCS\WildExchangeBundle\Entity\Question $question
+     *
+     * @return User
+     */
+    public function addQuestion(\WCS\WildExchangeBundle\Entity\Question $question)
+    {
+        $this->questions[] = $question;
+
+        return $this;
+    }
+
+    /**
+     * Remove question
+     *
+     * @param \WCS\WildExchangeBundle\Entity\Question $question
+     */
+    public function removeQuestion(\WCS\WildExchangeBundle\Entity\Question $question)
+    {
+        $this->questions->removeElement($question);
+    }
+
+    /**
+     * Get questions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getQuestions()
+    {
+        return $this->questions;
     }
 }

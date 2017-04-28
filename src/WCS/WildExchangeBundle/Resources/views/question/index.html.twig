@@ -1,63 +1,8 @@
 {#{% extends 'base.html.twig' %}
 {% extends 'homePage.html.twig' %}#}
 
-<style>
-
-    body{
-        margin-left: 100px;
-    }
-
-    .titre{
-        /*background-color: blue;*/
-        border: solid 1px;
-        border-radius: 10px;
-
-        font-size: 20px;
-        font-weight: bold;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .textField{
- 
-        height: 160px;
-        border: solid 1px;
-        border-radius: 10px;
-        word-wrap: break-word;
-    }
 
 
-    .zone{
-       width: 33%;
-       display:inline;
-    }
-
-
-    .legende{
-        color: red;
-        font-size: 15px;
-        margin-left: 50px;
-    }
-
-    .BulleQuestion{
-        background-color: #80CBC4;
-        border-radius: 20px;
-
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .BtnAction{
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;    
-    }
-
-
-
-</style>
-
-    <h1>Questions list</h1>
 
 
 
@@ -67,35 +12,45 @@
 
 
             <div class="input-field">
-                <div class="row">
-                    <div class="titre  col s9 offset-s1">
-                        <span>Question : </span>{{ question.titre }}
-                    </div>
-                </div>
 
                 <div class="row">
-                    <div class="textField col s9 offset-s1">
-                        {{ question.contenu }}
-                    </div>
-
-                    <div class="col s2">
+                    <div id="questavatar" class="col s2">
                         <img class="responsive-img" src="{{ asset('img/deer2fw-1.png') }}" alt="" />
+                        <span> {{question.user.username}}</span>
+                    </div>
+                    <div id="coin" class="col s1">
+                        <img id="coinbulle"{# class="responsive-img" #} src="{{ asset('img/geosvg_1-1.svg') }}" alt="" />
+                    </div>
+                    <div id="littlebubble" class="col s9">
+                        <div class="row">
+                            <div class="titre  col s9 offset-s1">
+                                <span>{{ question.titre }}</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="textField col s9 offset-s1">
+                                {{ question.contenu|nl2br }}
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
 
                 <br>
 
-                <div class="row">
-                    <div class="zone col s4">
-                     Création le {{ question.dateQuestion|date('d/m/Y') }} à {{ question.dateQuestion|date('H:i:s') }}
+                <div id="infoquest" class="row">
+                    <div class="zone col s3"></div>
+                    <div class="zone col s3">
+                     le {{ question.dateQuestion|date('d/m/Y') }} à {{ question.dateQuestion|date('H:i:s') }}
                      </div>
 
-                    <div class="zone col s4">
-                        <a href="{{ path('question_show', { 'id': question.id }) }} " class="waves-effect waves-light btn" >{{ "Developper" }}   </a>
+                    <div id="showbtn" class="zone col s3">
+                        <a href="{{ path('question_show', { 'id': question.id }) }} " class="waves-effect waves-light btn" >{{ "Consulter" }}   </a>
                     </div>
+                    <div class="zone col  s3"></div>
 
-                    <div class="zone col s4">
+
+                    <div class="zone col s3">
                      Nombre de consultation(s) : {{ question.nbConsultation }}
                     </div>
                 </div>

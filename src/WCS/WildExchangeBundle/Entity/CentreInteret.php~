@@ -5,12 +5,12 @@ namespace WCS\WildExchangeBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Tag
+ * CentreInteret
  *
- * @ORM\Table(name="tag")
- * @ORM\Entity(repositoryClass="WCS\WildExchangeBundle\Repository\TagRepository")
+ * @ORM\Table(name="centre_interet")
+ * @ORM\Entity(repositoryClass="WCS\WildExchangeBundle\Repository\CentreInteretRepository")
  */
-class Tag
+class CentreInteret
 {
     /**
      * @var int
@@ -24,9 +24,9 @@ class Tag
     /**
      * @var string
      *
-     * @ORM\Column(name="tag", type="string", length=255)
+     * @ORM\Column(name="interet", type="string", length=255)
      */
-    private $tag;
+    private $interet;
 
 
     /**
@@ -40,26 +40,27 @@ class Tag
     }
 
     /**
-     * Set tag
+     * Set interet
      *
-     * @param string $tag
+     * @param string $interet
      *
-     * @return Tag
+     * @return CentreInteret
      */
-    public function setTag($tag)
+    public function setInteret($interet)
     {
-        $this->tag = $tag;
+        $this->interet = $interet;
 
         return $this;
     }
 
     /**
-     * Get tag
+     * Get interet
      *
      * @return string
      */
-    public function getTag()
+    public function getInteret()
     {
-        return $this->tag;
+        return $this->interet;
     }
 }
+

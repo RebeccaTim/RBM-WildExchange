@@ -63,4 +63,3 @@ class CentreInteret
         return $this->interet;
     }
 }
-

@@ -10,4 +10,22 @@ namespace WCS\WildExchangeBundle\Repository;
  */
 class QuestionRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function findAll($sorting = "iddesc")
+	{
+		switch ($sorting){
+			case 'iddesc':
+				return $this->findBy(array(), array('id' => 'DESC'));
+				break;
+			case 'idasc' :
+				return $this->findBy(array(), array('id' => 'ASC'));
+				break;
+			case 'consultasc' :
+				return $this->findBy(array(), array('nbConsultation' => 'ASC'));
+				break;
+			case 'consultdesc' :
+				return $this->findBy(array(), array('nbConsultation' => 'DESC'));
+				break;
+
+		}
+	}
 }

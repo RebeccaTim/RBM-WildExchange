@@ -16,11 +16,19 @@ class HomepageController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $questions = $em->getRepository('WCSWildExchangeBundle:Question')->findAll();
+        
+        if (!empty($_GET))
+        {
+        $questions = $em->getRepository('WCSWildExchangeBundle:Question')->findAll($_GET['sort']);
+            
+        }
 
         //return $this->render('homeBase.html.twig', array(
         return $this->render('WCSWildExchangeBundle:HomePage:HomePage.html.twig', array(
             "questions" => $questions,
         ));
+
+
 
     }
 }

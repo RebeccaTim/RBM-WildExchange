@@ -32,6 +32,10 @@ body
 
     background-color: #1fa597;
 }
+#nav2 ul
+{
+    margin-right: 330px;
+}
 #pages
 {
     width: 100%;
@@ -40,6 +44,7 @@ body
     text-align: center;
     padding-top: 10px;
     background-color: #1fa597;
+    margin-top: 50px;
 }
 .pagination li.active {
     background-color: #f9a02e;
@@ -213,6 +218,22 @@ nav .input-field label i
 {
     margin-top: 27px;
     margin-right: 100px;
+    width: 400px;
+}
+#questionbar a
+{
+/*    margin-top: 27px;
+    margin-right: 100px;*/
+    background-color: white;
+    border-radius: 20px;
+    width: 280px;
+    text-align: center;
+    color: #26a69a;
+}
+
+#questionbar a:hover{
+    background-color: #26a69a;
+    color: white;
 }
 #prev
 {
@@ -310,6 +331,46 @@ text-align: center;
     background-color: #26a69a;
 }
 
+#btnquest i{
+    background-color: #f9a02e;
+    border-radius: 20px;
+    float: right;
+    margin-top: -50px;
+    margin-right: 50px;
+}
+#btnquest i:hover{
+    background-color: #26a69a;
+}
+
+#content {
+    margin-left:200px; 
+    margin-right:200px;
+    height: 500px;
+    padding: 50px;
+}
+#questcontent {
+    margin-left:200px; 
+    margin-right:200px;
+    height: 500px;
+    padding: 50px;
+}
+label.active
+{
+    color: #26a69a;
+}
+.textform
+{
+    color: #f9a02e;
+}
+#questarea textarea
+{
+    border-color: #f9a02e;
+}
+
+#questarea textarea.active
+{
+    border-color: #26a69a;
+}
 
 
 
@@ -318,10 +379,9 @@ text-align: center;
 
 
 
-
-#test{
+/*#test{
     width: 25%;
     margin-left: 38%;
     text-align: center;
     height: 700px;
-}
+}*/
