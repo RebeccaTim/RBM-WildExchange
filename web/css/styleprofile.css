@@ -18,6 +18,10 @@
     color: white;
 }
 
+#editrouting {
+    display: inline;
+}
+
 #profilebubble {
     color: #f9a02e;
     padding: 10px;
@@ -54,6 +58,7 @@ select {
 
 .buttonrow {
     padding: 3px;
+    margin-top:10px;
 }
 
 #avatar {
@@ -62,6 +67,8 @@ select {
     justify-content: left;
     display: none;
 }
+
+
 
 #avatarShow {
     height: 100px;
@@ -124,6 +131,15 @@ select {
     border-radius: 30px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
+}
+.showinfo{
+    text-align: center;
+}
+
+.rowShow{
+    margin-top:20px;
+    margin-bottom:20px;
+
 }
 
 .tri-right.btm-left:after {

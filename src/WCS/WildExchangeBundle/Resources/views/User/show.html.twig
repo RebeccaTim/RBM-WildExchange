@@ -8,63 +8,63 @@
     <div class="container">
 
         <form  class="col s8 offset-s2 talk-bubble tri-right round btm-left talktext"  method="POST" id='profilebubble'>
-            <div class="row">
+            <div class="row rowShow">
                 <div class="input-field  col s4 offset-2">
-                    <img id="avatarShow" src="{{ asset('img/deer2fw.png') }}" alt="Un petit soucis mais on sait que t'as la Wild Attitude" />
+                    <img id="avatarShow" src="{{ user.urlAvatar }}" alt="Un petit soucis mais on sait que t'as la Wild Attitude" />
                 </div>
 
                 <div class="input-field col s4 offset-s1">
-                    <p>{{ user.username }}</p>
+                    <p class="showinfo">{{ user.username }}</p>
 
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row rowShow">
                 <div class="input-field col s4 offset-s1">
                     <i class="material-icons prefix">account_circle</i>
-                    <p>{{ user.firstname }}</p>
+                    <p class="showinfo">{{ user.firstname }}</p>
 
 
                 </div>
 
                 <div class="input-field col s4 offset-s1">
-                    <p>{{ user.lastname }}</p>
+                    <p class="showinfo">{{ user.lastname }}</p>
 
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row rowShow">
                 <div class="input-field col s9 offset-s1">
                     <i class="material-icons prefix">email</i>
-                    <p>{{ user.email }}</p>
+                    <p class="showinfo">{{ user.email }}</p>
 
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row rowShow">
                 <div class="input-field col s9 offset-s1">
                     <i class="material-icons prefix">phone</i>
-                    <p>{{ user.phone }}</p>
+                    <p class="showinfo">{{ user.phone }}</p>
 
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row rowShow">
                 <div class="input-field col s9 offset-s1">
                     <i class="material-icons prefix">star</i>
-                    <p> interest</p>
+                    <p class="showinfo"> interest</p>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="input-field col s9 offset-s1">
+            <div class="row rowShow">
+                <div class="input-field col s10 offset-s1">
                     <i class="material-icons prefix">mode_edit</i>
-                    <p> {{ user.description }}</p>
+                    <p class="showinfo"> {{ user.description }}</p>
                 </div>
             </div>
 
 
-            <div class="row">
+            <div class="row rowShow">
 
                 <div class="switch col s8 offset-s2" align="center">
 
@@ -72,19 +72,19 @@
                 </div>
             </div>
 
-            <div class="row" id="situation" >
+            <div class="row rowShow" id="situation" >
                 <div class="input-field col s9 offset-s1">
                     <i class="material-icons prefix">android</i>
-                    <p>   {{ user.situation }}</p>
+                    <p class="showinfo">   {{ user.situation }}</p>
 
 
                 </div>
             </div>
 
-            <div class="row buttonrow">
+            <div class="row rowShow buttonrow">
                                  <a id="editrouting" href="{{ path('wcs_wild_exchange_user_edit')}}" >
-                                     <button class="btn waves-effect waves-light wildbtn col s6 offset-s3" type="submit" name="action">
-                                     Modifier
+                                     <button class="btn waves-effect waves-light wildbtn col s6 offset-s3" type="button" name="action">
+                                     Modifier mon profil
                                          <i class="material-icons right">input</i>
                                      </button>
                                  </a>
