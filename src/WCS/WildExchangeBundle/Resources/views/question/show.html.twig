@@ -3,49 +3,6 @@
 
 {% block body %}
 
-{#        <div class="BulleQuestion">
-            <div class="input-field">
-                <div class="row">
-                    <div class="titre  col s9 offset-s1">
-                        <span>{{ question.titre }}</span>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="textField col s9 offset-s1">
-                        {{ question.contenu }}
-                    </div>
-
-                    <div class="col s2">
-                        <img class="responsive-img" src="{{ asset('img/deer2fw-1.png') }}" alt="" />
-                    </div>                    
-                </div>
-
-                <div class="row">
-                    <div class="zone col s3 offset-s1">
-                     Le {{ question.dateQuestion|date('d/m/Y') }} à {{ question.dateQuestion|date('H:i:s') }}
-                     </div>
-
-                    <div class="zone col offset-s3 s3">
-                     Nombre de consultation(s) : {{ question.nbConsultation }}
-                    </div>
-                </div>
-
-                <div class="row">
-
-                    <div class="zone col s3 offset-s1">
-                        <a href="{{ path('wcs_wild_exchange_homepage') }} " class="waves-effect waves-light btn" >{{ "Retour aux questions" }}   </a>
-                    </div>
-
-                    <div class="zone col offset-s3 s3">
-                        <a href="{{ path('question_show', { 'id': question.id }) }} " class="waves-effect waves-light btn" >{{ "Repondre" }}   </a>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div> #}
 
             <div class="BulleQuestion">
 
@@ -74,6 +31,7 @@
                              </div>
                          </div>
                      </div>
+                
 
                      <br>
 

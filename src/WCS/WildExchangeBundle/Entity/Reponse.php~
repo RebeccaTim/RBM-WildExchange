@@ -145,52 +145,5 @@ class Reponse
     {
         return $this->dateCreation;
     }
-
-    /**
-     * Set user
-     *
-     * @param \WCS\WildExchangeBundle\Entity\User $user
-     *
-     * @return Reponse
-     */
-    public function setUser(\WCS\WildExchangeBundle\Entity\User $user = null)
-    {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return \WCS\WildExchangeBundle\Entity\User
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    /**
-     * Set question
-     *
-     * @param \WCS\WildExchangeBundle\Entity\Question $question
-     *
-     * @return Reponse
-     */
-    public function setQuestion(\WCS\WildExchangeBundle\Entity\Question $question = null)
-    {
-        $this->question = $question;
-
-        return $this;
-    }
-
-    /**
-     * Get question
-     *
-     * @return \WCS\WildExchangeBundle\Entity\Question
-     */
-    public function getQuestion()
-    {
-        return $this->question;
-    }
 }
+

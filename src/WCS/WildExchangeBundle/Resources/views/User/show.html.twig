@@ -1,0 +1,99 @@
+{% extends "@FOSUser/layout.html.twig" %}
+{% block fos_user_content %}
+    {% include "@FOSUser/Profile/show_content.html.twig" %}
+{% endblock fos_user_content %}
+{% block body %}
+
+
+    <div class="container">
+
+        <form  class="col s8 offset-s2 talk-bubble tri-right round btm-left talktext"  method="POST" id='profilebubble'>
+            <div class="row">
+                <div class="input-field  col s4 offset-2">
+                    <img id="avatarShow" src="{{ asset('img/deer2fw.png') }}" alt="Un petit soucis mais on sait que t'as la Wild Attitude" />
+                </div>
+
+                <div class="input-field col s4 offset-s1">
+                    <p>{{ user.username }}</p>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s4 offset-s1">
+                    <i class="material-icons prefix">account_circle</i>
+                    <p>{{ user.firstname }}</p>
+
+
+                </div>
+
+                <div class="input-field col s4 offset-s1">
+                    <p>{{ user.lastname }}</p>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s9 offset-s1">
+                    <i class="material-icons prefix">email</i>
+                    <p>{{ user.email }}</p>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s9 offset-s1">
+                    <i class="material-icons prefix">phone</i>
+                    <p>{{ user.phone }}</p>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s9 offset-s1">
+                    <i class="material-icons prefix">star</i>
+                    <p> interest</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s9 offset-s1">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <p> {{ user.description }}</p>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="switch col s8 offset-s2" align="center">
+
+
+                </div>
+            </div>
+
+            <div class="row" id="situation" >
+                <div class="input-field col s9 offset-s1">
+                    <i class="material-icons prefix">android</i>
+                    <p>   {{ user.situation }}</p>
+
+
+                </div>
+            </div>
+
+            <div class="row buttonrow">
+                                 <a id="editrouting" href="{{ path('wcs_wild_exchange_user_edit')}}" >
+                                     <button class="btn waves-effect waves-light wildbtn col s6 offset-s3" type="submit" name="action">
+                                     Modifier
+                                         <i class="material-icons right">input</i>
+                                     </button>
+                                 </a>
+
+
+
+            </div>
+
+        </form>
+    </div>
+
+{% endblock %}

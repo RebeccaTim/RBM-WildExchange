@@ -80,19 +80,16 @@ class QuestionController extends Controller
         $id=$question;
 
         $em = $this->getDoctrine()->getManager();
+
         $question=$em->getRepository('WCSWildExchangeBundle:Question')->find($id);
 
         $question->setNbConsultation($question->getNbConsultation()+1);
 
-        $em->persist($question);
         $em->flush();
-
-//
-
 
         return $this->render('WCSWildExchangeBundle:question:show.html.twig', array(
             'question' => $question,
-            'delete_form' => $deleteForm->createView(),
+            'delete_form' => $deleteForm->createView()
         ));
     }
 
